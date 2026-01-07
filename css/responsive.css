@@ -1,56 +1,41 @@
 /* =========================
-   responsive.css
-   Breakpoints + Mobile tweaks
+   responsive.css (REMPLACE TON responsive.css PAR CELUI-CI)
    ========================= */
 
-/* Mobile-first: base styles already in main.css */
+/* Global safety: prevent accidental horizontal scroll on mobile */
+html,
+body {
+  overflow-x: hidden;
+}
 
-/* ---------- Small phones (<= 360px) ---------- */
-@media (max-width: 360px) {
-  :root {
-    --gutter: 16px;
+/* Utility: wrap rows nicely on small screens */
+.wrap {
+  flex-wrap: wrap;
+}
+
+/* ---------------------------------
+   <= 1024px (tablets / small laptops)
+   --------------------------------- */
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
-  .btn {
-    padding: 10px 12px;
-  }
-
-  .card {
-    padding: 16px;
+  /* Slightly tighter spacing */
+  .grid {
+    gap: 14px;
   }
 }
 
-/* ---------- Phones / small tablets (<= 640px) ---------- */
-@media (max-width: 640px) {
-  .section {
-    padding: 34px 0;
-  }
-
-  .nav-inner {
-    padding: 12px 0;
-  }
-
-  .nav-links {
-    gap: 8px;
-  }
-
-  .nav-link {
-    padding: 9px 10px;
-    border-radius: 12px;
-  }
-
-  .hero {
-    padding: 34px 0;
-  }
-
-  .hero-card {
-    padding: 18px;
-  }
-
+/* ---------------------------------
+   <= 900px (tablet portrait)
+   Make app 1 column earlier
+   --------------------------------- */
+@media (max-width: 900px) {
   /* App layout becomes single column */
   .app {
-    grid-template-columns: 1fr;
-    padding: 12px 0 22px;
+    grid-template-columns: 1fr !important;
   }
 
   .sidebar {
@@ -58,121 +43,86 @@
     top: auto;
     max-height: none;
   }
-
-  .content {
-    gap: 12px;
-  }
-
-  /* Buttons full width where needed */
-  .cta-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .cta-row .btn {
-    width: 100%;
-  }
-
-  /* Table becomes scrollable */
-  .table-wrap {
-    overflow-x: auto;
-    border-radius: var(--radius-lg);
-  }
-
-  .table {
-    min-width: 640px;
-  }
 }
 
-/* ---------- Tablets (<= 900px) ---------- */
-@media (max-width: 900px) {
-  :root {
-    --container: 980px;
-  }
-
-  /* Slightly tighter spacing */
-  .card {
-    padding: 16px;
-  }
-
-  .app {
-    grid-template-columns: 240px 1fr;
-    gap: 14px;
-  }
-
-  .sidebar {
-    padding: 12px;
-  }
-
-  .side-item {
-    padding: 9px 10px;
-  }
-}
-
-/* ---------- Small laptops (<= 1100px) ---------- */
-@media (max-width: 1100px) {
-  :root {
-    --container: 980px;
-  }
-}
-
-/* ---------- Large screens (>= 1300px) ---------- */
-@media (min-width: 1300px) {
-  :root {
-    --container: 1180px;
-  }
-
-  .app {
-    grid-template-columns: 300px 1fr;
-  }
-}
-
-/* ---------- Super wide (>= 1600px) ---------- */
-@media (min-width: 1600px) {
-  :root {
-    --container: 1240px;
-  }
-
-  .hero {
-    padding: 54px 0;
-  }
-}
-
-/* =========================
-   Mobile polish patch
-   Ajoute ceci en bas de responsive.css
-   ========================= */
-
-/* Prevent horizontal scroll due to long content */
-html,
-body {
-  overflow-x: hidden;
-}
-
-/* ---------- Phones / small tablets (<= 640px) ---------- */
+/* ---------------------------------
+   <= 640px (phones)
+   Main mobile polish
+   --------------------------------- */
 @media (max-width: 640px) {
-  /* Better touch spacing */
   :root {
     --gutter: 16px;
   }
 
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  /* Touch-friendly controls */
   .btn,
   .input,
   .select,
   .textarea {
-    min-height: 44px; /* thumb-friendly */
+    min-height: 44px;
   }
 
   .btn-lg {
     min-height: 50px;
   }
 
-  /* Navbar: wrap cleanly, avoid overflow */
+  /* Reduce big paddings on cards */
+  .card {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  /* Make rows stack more naturally */
+  .row.spread {
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  /* Ensure form controls full width in rows */
+  .row .btn,
+  .row .input,
+  .row .select,
+  .row .textarea {
+    width: 100%;
+  }
+
+  /* -----------------------
+     12-col inline grids stack
+     (Your HTML uses inline grid-column spans)
+     ----------------------- */
+  /* If a section uses 12-col grid inline, force 1 col on mobile */
+  .grid[style*="repeat(12"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Force inline spans (span 6 -> full width) */
+  [style*="grid-column: span 6"],
+  [style*="grid-column:span 6"],
+  [style*="grid-column: span6"],
+  [style*="grid-column:span6"] {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Keep 12 span full width */
+  [style*="grid-column: span 12"],
+  [style*="grid-column:span 12"] {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* -----------------------
+     Navbar (general)
+     ----------------------- */
   .nav-inner {
     gap: 10px;
     flex-wrap: wrap;
   }
 
+  /* If nav links are visible (desktop), wrap */
   .nav-links {
     width: 100%;
     justify-content: flex-start;
@@ -180,68 +130,40 @@ body {
     gap: 10px;
   }
 
-  /* Make primary CTA take full width when it exists in nav (optional) */
+  /* Optional: primary CTA full width in nav */
   .nav-links .btn-primary {
     width: 100%;
   }
 
-  /* HERO: tighten */
-  .hero-card {
-    padding: 16px;
-  }
-
-  /* ----- IMPORTANT: force 12-col grid cards to stack ----- */
-  /* Because your HTML uses inline styles like: style="grid-column: span 6" */
-  [style*="grid-column: span 6"] {
-    grid-column: span 12 !important;
-  }
-
-  /* Keep 12-span as is */
-  [style*="grid-column: span 12"] {
-    grid-column: span 12 !important;
-  }
-
-  /* If you have grids with 12 columns inline, ensure they behave */
-  [style*="grid-template-columns: repeat(12"] {
-    grid-template-columns: repeat(12, 1fr) !important;
-  }
-
-  /* Pricing cards / feature cards spacing */
-  .card {
-    border-radius: 18px;
-  }
-
-  /* Tables wrap helper */
-  .table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* ---------- APP: turn sidebar into horizontal scroll menu ---------- */
+  /* -----------------------
+     APP: Sidebar becomes horizontal scroll (app-like)
+     ----------------------- */
   .app {
     gap: 12px;
   }
 
   .sidebar {
-    position: relative;
-    top: auto;
-    max-height: none;
-
-    /* horizontal nav */
+    /* turn sidebar into horizontal pills bar */
     display: flex;
     align-items: center;
     gap: 10px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     padding: 10px;
+
+    position: relative;
+    top: auto;
+    max-height: none;
   }
 
-  /* Hide "Modules" title on mobile to save space */
   .side-title {
     display: none;
   }
 
-  /* Make items chip-like and horizontal */
+  .sidebar .hr {
+    display: none;
+  }
+
   .side-item {
     flex: 0 0 auto;
     white-space: nowrap;
@@ -255,7 +177,7 @@ body {
     border-color: rgba(109, 94, 252, 0.45);
   }
 
-  /* Compact plan card in sidebar becomes a normal card below (optional) */
+  /* Compact plan card stays compact in horizontal bar */
   .sidebar .card.compact {
     flex: 0 0 auto;
     white-space: nowrap;
@@ -263,25 +185,27 @@ body {
     border-radius: 16px;
   }
 
-  /* Content spacing */
   .content {
+    min-width: 0;
     gap: 12px;
   }
 
-  /* Toast: ensure it's not too wide */
+  /* Toast not too wide */
   .toast .card {
     width: min(520px, calc(100vw - 24px));
   }
 }
 
-/* ---------- Very small phones (<= 360px) ---------- */
+/* ---------------------------------
+   <= 360px (very small phones)
+   --------------------------------- */
 @media (max-width: 360px) {
-  .nav-links .nav-link {
-    padding: 8px 10px;
-  }
-
   .h1 {
     font-size: 1.8rem;
+  }
+
+  .nav-links .nav-link {
+    padding: 8px 10px;
   }
 
   .sidebar {
@@ -293,81 +217,12 @@ body {
   }
 }
 
-/* =========================
-   Mobile hamburger menu (landing)
-   Add at bottom of responsive.css
-   ========================= */
+/* =========================================================
+   MOBILE HAMBURGER (Landing / index.html)
+   Animated burger + overlay + menu card background
+   ========================================================= */
 
-.nav-burger {
-  display: none;
-}
-
-/* Burger icon */
-.burger {
-  width: 20px;
-  height: 2px;
-  display: inline-block;
-  background: currentColor;
-  position: relative;
-  border-radius: 999px;
-}
-.burger::before,
-.burger::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 20px;
-  height: 2px;
-  background: currentColor;
-  border-radius: 999px;
-}
-.burger::before {
-  top: -6px;
-}
-.burger::after {
-  top: 6px;
-}
-
-/* Mobile menu container */
-.mobile-menu {
-  position: fixed;
-  top: 68px; /* height of navbar area, ok with your current style */
-  left: 0;
-  right: 0;
-  z-index: 60;
-  padding: 12px 0 0;
-}
-
-.mobile-menu-inner {
-  padding: 12px;
-  display: grid;
-  gap: 10px;
-}
-
-/* Mobile behavior */
-@media (max-width: 640px) {
-  /* Hide normal links on mobile */
-  .nav-links {
-    display: none;
-  }
-
-  /* Show burger */
-  .nav-burger {
-    display: inline-flex;
-  }
-
-  /* Make menu links look nice */
-  .mobile-menu .side-item {
-    border-radius: 14px;
-    padding: 12px 12px;
-  }
-}
-
-/* =========================
-   Mobile hamburger animation + overlay
-   Add at bottom of responsive.css
-   ========================= */
-
+/* Hidden by default (desktop) */
 .nav-burger {
   display: none;
 }
@@ -403,9 +258,9 @@ body {
   top: 6px;
 }
 
-/* When open: turn into X */
+/* Open state -> X */
 .nav-burger.is-open .burger {
-  background: transparent; /* hide middle line */
+  background: transparent;
 }
 
 .nav-burger.is-open .burger::before {
@@ -436,7 +291,7 @@ body {
 /* Mobile menu container */
 .mobile-menu {
   position: fixed;
-  top: 68px;
+  top: 68px; /* navbar height area */
   left: 0;
   right: 0;
   z-index: 60;
@@ -457,8 +312,9 @@ body {
   gap: 10px;
 }
 
-/* Mobile behavior */
+/* On phones: hide normal nav links and show burger */
 @media (max-width: 640px) {
+  /* Hide desktop nav links for landing pages that use hamburger */
   .nav-links {
     display: none;
   }
@@ -467,116 +323,30 @@ body {
     display: inline-flex;
   }
 
-  .mobile-menu .side-item {
-    border-radius: 14px;
-    padding: 12px 12px;
-  }
-}
-
-/* On desktop: keep overlay/menu hidden even if accidentally toggled */
-@media (min-width: 641px) {
-  .mobile-overlay,
-  .mobile-menu {
-    display: none !important;
-  }
-}
-
-/* =========================
-   Fix mobile menu background
-   ========================= */
-@media (max-width: 640px) {
+  /* ✅ Make menu visually distinct (opaque background) */
   .mobile-menu-inner {
-    background: var(--bg2); /* fond plein */
+    background: var(--bg2);
     border: 1px solid var(--stroke);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
     border-radius: 18px;
   }
-}
 
-/* =========================
-   APP Responsive Fix (Mobile-first)
-   Add at bottom of responsive.css
-   ========================= */
-
-@media (max-width: 900px) {
-  /* App layout becomes 1 column earlier */
-  .app {
-    grid-template-columns: 1fr !important;
+  /* Mobile menu links look nice */
+  .mobile-menu .side-item {
+    border-radius: 14px;
+    padding: 12px 12px;
   }
 
-  .sidebar {
-    position: relative;
-    top: auto;
-    max-height: none;
+  /* Lock scroll when menu open (if JS toggles .menu-open) */
+  body.menu-open {
+    overflow: hidden;
   }
 }
 
-@media (max-width: 640px) {
-  /* Make any 12-col grids stack cleanly */
-  .grid[style*="repeat(12"] {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Catch inline grid-column spans (more robust) */
-  [style*="grid-column: span 6"],
-  [style*="grid-column:span 6"],
-  [style*="grid-column: span6"],
-  [style*="grid-column:span6"] {
-    grid-column: 1 / -1 !important;
-  }
-
-  /* Cards & content spacing */
-  .card {
-    padding: 14px;
-  }
-
-  .row.spread {
-    gap: 10px;
-    align-items: flex-start;
-  }
-
-  /* Inputs full width */
-  .row .btn,
-  .row .input,
-  .row .select {
-    width: 100%;
-  }
-
-  /* Sidebar becomes horizontal scroll (app-like) */
-  .sidebar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 10px;
-  }
-
-  .side-title {
-    display: none;
-  }
-
-  .sidebar .hr {
-    display: none;
-  }
-
-  .side-item {
-    flex: 0 0 auto;
-    white-space: nowrap;
-    padding: 10px 12px;
-    border-radius: 999px;
-    border: 1px solid var(--stroke);
-    background: var(--chip);
-  }
-
-  .sidebar .card.compact {
-    flex: 0 0 auto;
-    white-space: nowrap;
-    padding: 10px 12px;
-  }
-
-  /* Prevent any overflow */
-  .content {
-    min-width: 0;
+/* On desktop: never show overlay/menu even if toggled */
+@media (min-width: 641px) {
+  .mobile-overlay,
+  .mobile-menu {
+    display: none !important;
   }
 }
