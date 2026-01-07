@@ -3,185 +3,111 @@
     "features": "Features",
     "pricing": "Pricing",
     "faq": "FAQ",
+    "start": "Get started",
+    "theme": "Theme"
+  },
+
+  "dashboard": {
+    "title": "Your progress",
+    "globalProgress": "Overall progress",
+    "nextAction": "Next action",
+    "project": "Project",
+    "goal": "Goal"
+  },
+
+  "onboarding": {
+    "title": "Onboarding",
+    "goalLabel": "Main goal",
+    "timeLabel": "Available time / week",
+    "skillsLabel": "Your skills",
+    "save": "Save",
+    "saved": "Saved"
+  },
+
+  "project": {
+    "title": "Create your project",
+    "name": "Business name",
+    "description": "Description",
+    "type": "Business type",
+    "audience": "Audience",
+    "budget": "Starting budget",
+    "experience": "Experience level",
+    "goalMonthly": "Monthly goal",
+    "generate": "Generate my plan",
+    "generated": "Plan generated",
+    "scores": "Scores",
+    "offer": "Suggested offer",
+    "actionPlan": "Action plan"
+  },
+
+  "types": {
+    "service": "Service",
+    "digital": "Digital product",
+    "subscription": "Subscription",
+    "physical": "Physical product",
+    "audience": "Audience / content"
+  },
+
+  "audiences": {
+    "b2c": "B2C (individuals)",
+    "b2b": "B2B (companies)",
+    "both": "Both"
+  },
+
+  "budget": {
+    "low": "0–50€",
+    "mid": "50–200€",
+    "high": "200–1000€",
+    "veryHigh": "1000€+"
+  },
+
+  "experience": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+
+  "validation": {
+    "title": "Validation",
+    "save": "Save",
+    "saved": "Saved",
+    "notes": "Notes"
+  },
+
+  "branding": {
+    "title": "Branding",
+    "name": "Brand name",
+    "promise": "Promise",
+    "pitch": "Pitch",
+    "save": "Save"
+  },
+
+  "finance": {
+    "title": "Finance",
+    "price": "Price",
+    "cost": "Cost",
+    "target": "Monthly target",
+    "margin": "Margin per sale",
+    "salesNeeded": "Sales needed",
+    "save": "Save"
+  },
+
+  "roadmap": {
+    "title": "Roadmap",
+    "addTask": "Add",
+    "empty": "No tasks yet"
+  },
+
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
     "theme": "Theme",
-    "start": "Get started"
+    "data": "Data"
   },
-  "hero": {
-    "chip": "Premium Business Copilot",
-    "title": "From zero to a profitable business — and a tool you keep long term.",
-    "subtitle": "Idea → validation → branding → offer → finance → roadmap → tracking. All in one application.",
-    "ctaPrimary": "Subscribe",
-    "ctaSecondary": "Explore features",
-    "badge1": "Instant access",
-    "badge2": "FR + EN",
-    "badge3": "100% online",
-    "cardTitle": "What you get",
-    "cardBadge": "All-in-one",
-    "item1Title": "Guided roadmap",
-    "item1Desc": "Clear steps and visible progress.",
-    "item2Title": "Validation & persona",
-    "item2Desc": "Market, target customer, problems and solutions.",
-    "item3Title": "Finance",
-    "item3Desc": "Pricing, margins, goals and profitability.",
-    "item4Title": "Long-term tracking",
-    "item4Desc": "Management, KPIs and optimization.",
-    "progressLabel": "Sample progress",
-    "progressValue": "38% completed",
-    "progressBadge": "Example",
-    "noteTitle": "Premium access",
-    "noteDesc": "Once subscribed, you get immediate access to the full application.",
-    "noteBadge1": "Monthly subscription",
-    "noteBadge2": "Cancel anytime"
-  },
-  "features": {
-    "kicker": "Modules",
-    "title": "Everything you need, from start to growth",
-    "subtitle": "Each module remains useful even after launch.",
-    "f1Title": "1) Onboarding & plan",
-    "tagCore": "Essential",
-    "f1Desc": "Targeted questions to build a personalized roadmap.",
-    "f2Title": "2) Ideas & scoring",
-    "tagFast": "Fast",
-    "f2Desc": "Generate and rank ideas based on potential.",
-    "f3Title": "3) Market validation",
-    "tagSmart": "Strategic",
-    "f3Desc": "Customer analysis, problem, solution and positioning.",
-    "f4Title": "4) Finance",
-    "tagMoney": "$",
-    "f4Desc": "Clear numbers to make better decisions.",
-    "f5Title": "5) Roadmap & tracking",
-    "tagLifetime": "Long-term",
-    "f5Desc": "Continuous tracking and business evolution."
-  },
-  "pricing": {
-    "kicker": "Pricing",
-    "title": "Simple and transparent pricing",
-    "subtitle": "Full access to the application and all features.",
-    "planTitle": "Premium",
-    "planBadge": "Recommended",
-    "perMonth": "/ month",
-    "b1": "Access to all modules",
-    "b2": "Personalized roadmap",
-    "b3": "Built-in finance tools",
-    "b4": "Continuous tracking and optimization",
-    "cta": "Pay with Stripe",
-    "help": "Secure payment. Instant access after confirmation.",
-    "howTitle": "How does it work?",
-    "howDesc": "Subscribe, access the app, and progress step by step.",
-    "altTitle": "Already subscribed?",
-    "altDesc": "You can directly access the application.",
-    "openApp": "Open the application"
-  },
-  "faq": {
-    "title": "Frequently asked questions",
-    "q1": "Can I cancel anytime?",
-    "a1": "Yes, the subscription is monthly and commitment-free.",
-    "q2": "Is my data saved?",
-    "a2": "Yes, your data is automatically saved to ensure continuity.",
-    "q3": "Does it work on mobile?",
-    "a3": "Yes, the application is fully responsive."
-  },
-  "footer": {
-    "tag": "NOLIMIT-NEXUS — premium business copilot",
-    "features": "Features",
-    "pricing": "Pricing",
-    "app": "Application"
-  },
-  "app": {
-    "reset": "Reset data",
-    "sidebarTitle": "Modules",
-    "nav": {
-      "dashboard": "Dashboard",
-      "onboarding": "Onboarding",
-      "ideas": "Ideas",
-      "validation": "Validation",
-      "branding": "Branding",
-      "finance": "Finance",
-      "roadmap": "Roadmap",
-      "settings": "Settings"
-    },
-    "planLabel": "Plan",
-    "planName": "Premium",
-    "planStatus": "Active",
-    "planHelp": "Premium access enabled.",
 
-    "dashboard": {
-      "kicker": "Dashboard",
-      "title": "Your progress",
-      "progressLabel": "Overall progress",
-      "badge": "Automatic",
-      "nextTitle": "Next action",
-      "nextDesc": "Complete onboarding to generate your plan.",
-      "nextCta": "Start onboarding",
-      "quickTitle": "Quick access",
-      "quickIdeas": "Ideas",
-      "quickFinance": "Finance",
-      "quickRoadmap": "Roadmap",
-      "quickHelp": "Your progress is saved automatically."
-    },
-
-    "onboarding": {
-      "kicker": "Module 1",
-      "title": "Onboarding",
-      "goalLabel": "Main goal",
-      "choose": "Choose…",
-      "goal1": "Side income",
-      "goal2": "Make a living from my business",
-      "goal3": "Scale and grow",
-      "goalHelp": "This helps tailor the strategy.",
-      "timeLabel": "Time available per week",
-      "timeHelp": "To adjust the workload.",
-      "skillsLabel": "Your skills",
-      "skillsPlaceholder": "e.g. video editing, mechanics, development, sales…",
-      "skillsHelp": "They will be used to generate relevant ideas.",
-      "save": "Save"
-    },
-
-    "ideas": {
-      "kicker": "Module 2",
-      "title": "Idea generator",
-      "badge": "Included",
-      "desc": "Create and analyze ideas tailored to your profile."
-    },
-
-    "validation": {
-      "kicker": "Module 3",
-      "title": "Validation",
-      "badge": "Included",
-      "desc": "Structure and validate your concept."
-    },
-
-    "branding": {
-      "kicker": "Module 4",
-      "title": "Branding",
-      "badge": "Included",
-      "desc": "Name, positioning and brand message."
-    },
-
-    "finance": {
-      "kicker": "Module 5",
-      "title": "Finance",
-      "badge": "Included",
-      "desc": "Financial tracking and clear goals."
-    },
-
-    "roadmap": {
-      "kicker": "Module 6",
-      "title": "Roadmap",
-      "badge": "Included",
-      "desc": "Structured and evolving action plan."
-    },
-
-    "settings": {
-      "kicker": "Settings",
-      "title": "Preferences",
-      "badge": "Personal",
-      "langTitle": "Language",
-      "langDesc": "Choose the interface language.",
-      "themeTitle": "Theme",
-      "themeDesc": "Customize the application appearance.",
-      "dataTitle": "Data",
-      "dataDesc": "Your information is saved automatically."
-    }
+  "toast": {
+    "saved": "Saved",
+    "generated": "Plan generated",
+    "reset": "Data reset"
   }
 }
