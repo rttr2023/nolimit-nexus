@@ -238,22 +238,39 @@
 })();
 
 // =========================
-// Landing mobile menu
+// Landing mobile menu (animated + overlay)
 // =========================
 (function () {
   const burgerBtn = document.getElementById("burgerBtn");
   const mobileMenu = document.getElementById("mobileMenu");
+  const mobileOverlay = document.getElementById("mobileOverlay");
 
-  if (!burgerBtn || !mobileMenu) return; // not on landing
+  if (!burgerBtn || !mobileMenu || !mobileOverlay) return; // not on landing
 
   function openMenu() {
+    mobileOverlay.hidden = false;
     mobileMenu.hidden = false;
-    burgerBtn.setAttribute("aria-expanded", "true");
+
+    // trigger transitions
+    requestAnimationFrame(() => {
+      mobileOverlay.classList.add("show");
+      mobileMenu.classList.add("show");
+      burgerBtn.classList.add("is-open");
+      burgerBtn.setAttribute("aria-expanded", "true");
+    });
   }
 
   function closeMenu() {
-    mobileMenu.hidden = true;
+    mobileOverlay.classList.remove("show");
+    mobileMenu.classList.remove("show");
+    burgerBtn.classList.remove("is-open");
     burgerBtn.setAttribute("aria-expanded", "false");
+
+    // after transition, hide elements
+    setTimeout(() => {
+      mobileOverlay.hidden = true;
+      mobileMenu.hidden = true;
+    }, 220);
   }
 
   function toggleMenu() {
@@ -262,6 +279,9 @@
   }
 
   burgerBtn.addEventListener("click", toggleMenu);
+
+  // Close when clicking overlay
+  mobileOverlay.addEventListener("click", closeMenu);
 
   // Close when clicking a link
   mobileMenu.addEventListener("click", (e) => {
@@ -279,12 +299,11 @@
     if (window.innerWidth > 640) closeMenu();
   });
 
-  // Mirror lang/theme buttons
+  // Mirror lang/theme buttons (optional)
   const langBtnMobile = document.getElementById("langBtnMobile");
   const themeBtnMobile = document.getElementById("themeBtnMobile");
   const langLabelMobile = document.getElementById("langLabelMobile");
 
-  // keep labels in sync
   function syncLangLabel() {
     const main = document.getElementById("langLabel");
     if (main && langLabelMobile) langLabelMobile.textContent = main.textContent;
@@ -301,7 +320,8 @@
   if (themeBtnMobile) {
     themeBtnMobile.addEventListener("click", () => {
       const themeBtn = document.getElementById("themeBtn");
-      if (themeBtn) themeBtn.click(); // reuse existing logic
+      if (themeBtn) themeBtn.click();
     });
   }
 })();
+
