@@ -1,465 +1,483 @@
 <!-- =========================
-     app.html (Application)
-     Protected by cookie later
+     app.html (REMPLACE TON app.html PAR CELUI-CI)
      ========================= -->
 <!doctype html>
 <html lang="fr">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0b0d12" />
     <title>NOLIMIT-NEXUS — App</title>
-    <meta name="description" content="Application premium pour créer et gérer un business de A à Z." />
+    <meta name="description" content="Application premium pour créer et piloter un business de A à Z." />
 
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- NAV -->
     <header class="navbar">
-        <div class="container">
-            <div class="nav-inner">
-                <a class="brand" href="./index.html">
-                    <span class="brand-badge" aria-hidden="true"></span>
-                    <span>NOLIMIT-NEXUS</span>
-                </a>
+      <div class="container">
+        <div class="nav-inner">
+          <a class="brand" href="./index.html">
+            <span class="brand-badge" aria-hidden="true"></span>
+            <span>NOLIMIT-NEXUS</span>
+          </a>
 
-                <nav class="nav-links" aria-label="Navigation app">
-                    <button class="btn btn-sm btn-ghost" id="langBtn" type="button">
-                        <span class="icon" aria-hidden="true">🌍</span>
-                        <span id="langLabel">FR</span>
-                    </button>
+          <nav class="nav-links" aria-label="Navigation app">
+            <button class="btn btn-sm btn-ghost" id="langBtn" type="button">
+              <span class="icon" aria-hidden="true">🌍</span>
+              <span id="langLabel">FR</span>
+            </button>
 
-                    <button class="btn btn-sm btn-ghost" id="themeBtn" type="button">
-                        <span class="icon" aria-hidden="true">🌓</span>
-                        <span data-i18n="nav.theme">Thème</span>
-                    </button>
+            <button class="btn btn-sm btn-ghost" id="themeBtn" type="button">
+              <span class="icon" aria-hidden="true">🌓</span>
+              <span>Thème</span>
+            </button>
 
-                    <button class="btn btn-sm btn-danger" id="resetBtn" type="button" data-i18n="app.reset">
-                        Réinitialiser les données
-                    </button>
-                </nav>
-            </div>
+            <button class="btn btn-sm btn-danger" id="resetBtn" type="button">
+              Réinitialiser les données
+            </button>
+          </nav>
         </div>
+      </div>
     </header>
 
     <main class="container">
-        <!-- App shell -->
-        <section class="app">
-            <!-- SIDEBAR -->
-            <aside class="sidebar">
-                <div class="side-title" data-i18n="app.sidebarTitle">Modules</div>
+      <section class="app">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <div class="side-title">Modules</div>
 
-                <a class="side-item active" href="#dashboard" data-route="dashboard">
-                    <span class="icon" aria-hidden="true">📊</span>
-                    <span data-i18n="app.nav.dashboard">Dashboard</span>
-                </a>
+          <a class="side-item active" href="#dashboard" data-route="dashboard">
+            <span class="icon" aria-hidden="true">📊</span>
+            <span>Dashboard</span>
+          </a>
 
-                <a class="side-item" href="#onboarding" data-route="onboarding">
-                    <span class="icon" aria-hidden="true">🧭</span>
-                    <span data-i18n="app.nav.onboarding">Onboarding</span>
-                </a>
+          <a class="side-item" href="#onboarding" data-route="onboarding">
+            <span class="icon" aria-hidden="true">🧭</span>
+            <span>Onboarding</span>
+          </a>
 
-                <a class="side-item" href="#ideas" data-route="ideas">
-                    <span class="icon" aria-hidden="true">💡</span>
-                    <span data-i18n="app.nav.ideas">Idées</span>
-                </a>
+          <!-- ✅ Module principal (wizard) -->
+          <a class="side-item" href="#project" data-route="project">
+            <span class="icon" aria-hidden="true">🧠</span>
+            <span>Projet</span>
+          </a>
 
-                <a class="side-item" href="#validation" data-route="validation">
-                    <span class="icon" aria-hidden="true">🧪</span>
-                    <span data-i18n="app.nav.validation">Validation</span>
-                </a>
+          <a class="side-item" href="#validation" data-route="validation">
+            <span class="icon" aria-hidden="true">🧪</span>
+            <span>Validation</span>
+          </a>
 
-                <a class="side-item" href="#branding" data-route="branding">
-                    <span class="icon" aria-hidden="true">🎯</span>
-                    <span data-i18n="app.nav.branding">Branding</span>
-                </a>
+          <a class="side-item" href="#branding" data-route="branding">
+            <span class="icon" aria-hidden="true">🎯</span>
+            <span>Branding</span>
+          </a>
 
-                <a class="side-item" href="#finance" data-route="finance">
-                    <span class="icon" aria-hidden="true">💶</span>
-                    <span data-i18n="app.nav.finance">Finances</span>
-                </a>
+          <a class="side-item" href="#finance" data-route="finance">
+            <span class="icon" aria-hidden="true">💶</span>
+            <span>Finances</span>
+          </a>
 
-                <a class="side-item" href="#roadmap" data-route="roadmap">
-                    <span class="icon" aria-hidden="true">✅</span>
-                    <span data-i18n="app.nav.roadmap">Roadmap</span>
-                </a>
+          <a class="side-item" href="#roadmap" data-route="roadmap">
+            <span class="icon" aria-hidden="true">✅</span>
+            <span>Roadmap</span>
+          </a>
 
-                <hr class="hr" style="margin: 12px 0" />
+          <hr class="hr" style="margin: 12px 0" />
 
-                <a class="side-item" href="#settings" data-route="settings">
-                    <span class="icon" aria-hidden="true">⚙️</span>
-                    <span data-i18n="app.nav.settings">Paramètres</span>
-                </a>
+          <a class="side-item" href="#settings" data-route="settings">
+            <span class="icon" aria-hidden="true">⚙️</span>
+            <span>Paramètres</span>
+          </a>
 
-                <div class="card compact stack" style="margin-top: 12px">
-                    <div class="small muted" data-i18n="app.planLabel">Plan</div>
-                    <div class="row spread">
-                        <strong data-i18n="app.planName">Premium</strong>
-                        <span class="badge ok" data-i18n="app.planStatus">Actif</span>
-                    </div>
-                    <p class="help">Accès premium actif.</p>
+          <div class="card compact stack" style="margin-top: 12px">
+            <div class="small muted">Offre</div>
+            <div class="row spread">
+              <strong>Premium</strong>
+              <span class="badge ok">Actif</span>
+            </div>
+            <p class="help">Accès premium en cours.</p>
+          </div>
+        </aside>
+
+        <!-- CONTENT -->
+        <section class="content">
+          <!-- DASHBOARD -->
+          <div class="card stack" id="dashboard" data-page="dashboard">
+            <div class="row spread wrap">
+              <div class="stack" style="gap: 4px">
+                <div class="kicker">Dashboard</div>
+                <h1 class="h2">Ta progression</h1>
+              </div>
+              <span class="badge" id="today"></span>
+            </div>
+
+            <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
+              <div class="card compact stack" style="grid-column: span 12">
+                <div class="row spread wrap">
+                  <div class="stack" style="gap: 4px">
+                    <div class="small muted">Progression globale</div>
+                    <div class="h3" id="globalProgressText">0%</div>
+                  </div>
+                  <span class="badge" id="globalProgressBadge">—</span>
                 </div>
-            </aside>
+                <div class="progress" aria-label="progress">
+                  <span id="globalProgressBar" style="width: 0%"></span>
+                </div>
+                <p class="help" id="globalNextAction">Complète l’onboarding puis crée ton projet.</p>
+                <div class="row wrap">
+                  <a class="btn btn-primary" href="#project">Créer mon projet</a>
+                  <a class="btn" href="#roadmap">Voir ma roadmap</a>
+                </div>
+              </div>
 
-            <!-- CONTENT -->
-            <section class="content">
-                <!-- DASHBOARD -->
-                <div class="card stack" id="dashboard" data-page="dashboard">
-                    <div class="row spread wrap">
-                        <div class="stack" style="gap: 4px">
-                            <div class="kicker" data-i18n="app.dashboard.kicker">Dashboard</div>
-                            <h1 class="h2" data-i18n="app.dashboard.title">Ta progression</h1>
-                        </div>
-                        <span class="badge" id="today"></span>
-                    </div>
+              <div class="card compact stack" style="grid-column: span 6">
+                <div class="small muted">Projet</div>
+                <div class="h3" id="dashProjectTitle">—</div>
+                <div class="row wrap" id="dashScores">
+                  <span class="badge">Rentabilité —</span>
+                  <span class="badge">Vitesse —</span>
+                  <span class="badge">Facilité —</span>
+                </div>
+              </div>
 
-                    <div class="row spread wrap">
-                        <div class="stack" style="gap: 4px">
-                            <div class="small muted" data-i18n="app.dashboard.progressLabel">Progression globale</div>
-                            <div class="h3"><span id="progressText">0%</span></div>
-                        </div>
-                        <span class="badge" data-i18n="app.dashboard.badge">Auto</span>
-                    </div>
+              <div class="card compact stack" style="grid-column: span 6">
+                <div class="small muted">Objectif</div>
+                <div class="h3" id="dashGoal">—</div>
+                <div class="small muted" id="dashSalesNeeded">—</div>
+              </div>
+            </div>
+          </div>
 
-                    <div class="progress" aria-label="progress">
-                        <span id="progressBar" style="width: 0%"></span>
-                    </div>
+          <!-- ONBOARDING (gardé simple) -->
+          <div class="card stack hidden" id="onboarding" data-page="onboarding">
+            <div class="row spread wrap">
+              <div class="stack" style="gap: 4px">
+                <div class="kicker">Module 1</div>
+                <h2 class="h2">Onboarding</h2>
+              </div>
+              <span class="badge" id="onboardingStatus">0/3</span>
+            </div>
 
-                    <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
-                        <div class="card compact stack" style="grid-column: span 6">
-                            <div class="h3" data-i18n="app.dashboard.nextTitle">Prochaine action</div>
-                            <p class="p" id="nextAction" data-i18n="app.dashboard.nextDesc">
-                                Commence par l’onboarding pour générer ton plan.
-                            </p>
-                            <a class="btn btn-primary" href="#onboarding" data-i18n="app.dashboard.nextCta">Aller à
-                                l’onboarding</a>
-                        </div>
+            <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
+              <div class="card compact stack" style="grid-column: span 6">
+                <div class="field">
+                  <label class="label" for="goal">Objectif principal</label>
+                  <select class="select" id="goal">
+                    <option value="" selected>Choisir…</option>
+                    <option value="side">Revenu complémentaire</option>
+                    <option value="full">Vivre du business</option>
+                    <option value="scale">Scaler / augmenter profits</option>
+                  </select>
+                  <div class="help">Ça aide à calibrer la roadmap.</div>
+                </div>
+              </div>
 
-                        <div class="card compact stack" style="grid-column: span 6">
-                            <div class="h3" data-i18n="app.dashboard.quickTitle">Raccourcis</div>
-                            <div class="row wrap">
-                                <a class="btn btn-sm" href="#ideas" data-i18n="app.dashboard.quickIdeas">Idées</a>
-                                <a class="btn btn-sm" href="#finance"
-                                    data-i18n="app.dashboard.quickFinance">Finances</a>
-                                <a class="btn btn-sm" href="#roadmap" data-i18n="app.dashboard.quickRoadmap">Roadmap</a>
-                            </div>
-                            <p class="help" data-i18n="app.dashboard.quickHelp">Tout se sauvegarde en cookies (V1).</p>
-                        </div>
-                    </div>
+              <div class="card compact stack" style="grid-column: span 6">
+                <div class="field">
+                  <label class="label" for="time">Temps dispo / semaine</label>
+                  <select class="select" id="time">
+                    <option value="" selected>Choisir…</option>
+                    <option value="2-5">2–5h</option>
+                    <option value="5-10">5–10h</option>
+                    <option value="10-20">10–20h</option>
+                    <option value="20+">20h+</option>
+                  </select>
+                  <div class="help">On adapte ton rythme.</div>
+                </div>
+              </div>
+
+              <div class="card compact stack" style="grid-column: span 12">
+                <div class="field">
+                  <label class="label" for="skills">Tes compétences (mots-clés)</label>
+                  <input class="input" id="skills" type="text" placeholder="ex : montage vidéo, mécanique, dev, vente…" />
+                  <div class="help">Optionnel mais utile.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row spread wrap">
+              <button class="btn btn-primary" id="saveOnboarding" type="button">Sauvegarder</button>
+              <span class="help" id="onboardingSavedMsg" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <!-- ✅ PROJET (Wizard : nom + description + quelques choix MINIMAUX) -->
+          <div class="card stack hidden" id="project" data-page="project">
+            <div class="row spread wrap">
+              <div class="stack" style="gap: 4px">
+                <div class="kicker">Module 2</div>
+                <h2 class="h2">Créer ton projet</h2>
+              </div>
+              <span class="badge" id="projectBadge">—</span>
+            </div>
+
+            <div class="card compact stack">
+              <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 12px">
+                <div class="field" style="grid-column: span 12">
+                  <label class="label" for="pName">Nom du business</label>
+                  <input class="input" id="pName" type="text" placeholder="ex : Garage mobile, Coach nutrition, Boutique…" />
                 </div>
 
-                <!-- ONBOARDING -->
-                <div class="card stack hidden" id="onboarding" data-page="onboarding">
-                    <div class="row spread wrap">
-                        <div class="stack" style="gap: 4px">
-                            <div class="kicker" data-i18n="app.onboarding.kicker">Module 1</div>
-                            <h2 class="h2" data-i18n="app.onboarding.title">Onboarding</h2>
-                        </div>
-                        <span class="badge" id="onboardingStatus">0/3</span>
-                    </div>
-
-                    <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
-                        <div class="card compact stack" style="grid-column: span 6">
-                            <div class="field">
-                                <label class="label" for="goal" data-i18n="app.onboarding.goalLabel">Objectif
-                                    principal</label>
-                                <select class="select" id="goal">
-                                    <option value="" selected data-i18n="app.onboarding.choose">Choisir…</option>
-                                    <option value="side" data-i18n="app.onboarding.goal1">Revenu complémentaire</option>
-                                    <option value="full" data-i18n="app.onboarding.goal2">Vivre du business</option>
-                                    <option value="scale" data-i18n="app.onboarding.goal3">Scaler / augmenter profits
-                                    </option>
-                                </select>
-                                <div class="help" data-i18n="app.onboarding.goalHelp">Ça aide à générer une roadmap
-                                    adaptée.</div>
-                            </div>
-                        </div>
-
-                        <div class="card compact stack" style="grid-column: span 6">
-                            <div class="field">
-                                <label class="label" for="time" data-i18n="app.onboarding.timeLabel">Temps dispo /
-                                    semaine</label>
-                                <select class="select" id="time">
-                                    <option value="" selected data-i18n="app.onboarding.choose">Choisir…</option>
-                                    <option value="2-5">2–5h</option>
-                                    <option value="5-10">5–10h</option>
-                                    <option value="10-20">10–20h</option>
-                                    <option value="20+">20h+</option>
-                                </select>
-                                <div class="help" data-i18n="app.onboarding.timeHelp">On calibrera la charge de travail.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card compact stack" style="grid-column: span 12">
-                            <div class="field">
-                                <input class="input" id="skills" type="text"
-                                    data-i18n-placeholder="app.onboarding.skillsPlaceholder" />
-
-                                <input class="input" id="skills" type="text"
-                                    placeholder="ex: montage vidéo, mécanique, dev, vente..." />
-                                <div class="help" data-i18n="app.onboarding.skillsHelp">On s’en servira pour générer des
-                                    idées.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row spread wrap">
-                        <button class="btn btn-primary" id="saveOnboarding" type="button"
-                            data-i18n="app.onboarding.save">
-                            Sauvegarder
-                        </button>
-                        <span class="help" id="onboardingSavedMsg" aria-live="polite"></span>
-                    </div>
+                <div class="field" style="grid-column: span 12">
+                  <label class="label" for="pDesc">Description (1–3 phrases)</label>
+                  <textarea class="textarea" id="pDesc" placeholder="Explique ce que tu vends, à qui, et comment."></textarea>
                 </div>
 
-                <!-- IDEAS -->
-                <div class="card stack hidden" id="ideas" data-page="ideas">
-  <div class="row spread wrap">
-    <div class="stack" style="gap: 4px">
-      <div class="kicker">Module 2</div>
-      <h2 class="h2">Idées</h2>
-    </div>
-    <span class="badge" id="ideasCount">0</span>
-  </div>
-
-  <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
-    <div class="card compact stack" style="grid-column: span 12">
-      <div class="h3">Ajouter une idée</div>
-
-      <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 12px">
-        <div class="field" style="grid-column: span 12">
-          <label class="label" for="ideaTitle">Titre</label>
-          <input class="input" id="ideaTitle" type="text" placeholder="ex : coaching fitness, site de services auto…" />
-        </div>
-
-        <div class="field" style="grid-column: span 12">
-          <label class="label" for="ideaDesc">Description</label>
-          <textarea class="textarea" id="ideaDesc" placeholder="Explique l’idée en 2–3 lignes"></textarea>
-        </div>
-
-        <div class="field" style="grid-column: span 4">
-          <label class="label" for="ideaProfit">Rentabilité (1–10)</label>
-          <input class="input" id="ideaProfit" type="number" min="1" max="10" value="7" />
-        </div>
-
-        <div class="field" style="grid-column: span 4">
-          <label class="label" for="ideaSpeed">Vitesse (1–10)</label>
-          <input class="input" id="ideaSpeed" type="number" min="1" max="10" value="6" />
-        </div>
-
-        <div class="field" style="grid-column: span 4">
-          <label class="label" for="ideaEase">Facilité (1–10)</label>
-          <input class="input" id="ideaEase" type="number" min="1" max="10" value="5" />
-        </div>
-      </div>
-
-      <div class="row spread wrap">
-        <button class="btn btn-primary" id="addIdeaBtn" type="button">Ajouter</button>
-        <span class="help" id="ideaMsg"></span>
-      </div>
-    </div>
-
-    <div class="card compact stack" style="grid-column: span 12">
-      <div class="row spread wrap">
-        <div class="h3">Mes idées</div>
-        <button class="btn btn-sm" id="sortIdeasBtn" type="button">Trier par score</button>
-      </div>
-
-      <div class="stack" id="ideasList" style="gap: 10px"></div>
-      <p class="help" id="ideasEmpty">Aucune idée pour le moment.</p>
-    </div>
-  </div>
-</div>
-
-
-                <!-- VALIDATION -->
-                <div class="card stack hidden" id="validation" data-page="validation">
-  <div class="row spread wrap">
-    <div class="stack" style="gap: 4px">
-      <div class="kicker">Module 3</div>
-      <h2 class="h2">Validation</h2>
-    </div>
-    <span class="badge" id="validationBadge">0%</span>
-  </div>
-
-  <div class="card compact stack">
-    <div class="field">
-      <label class="label" for="validationIdeaSelect">Choisir une idée</label>
-      <select class="select" id="validationIdeaSelect"></select>
-      <div class="help">Tu valides une idée à la fois.</div>
-    </div>
-
-    <hr class="hr" />
-
-    <div class="stack" id="validationChecklist" style="gap: 10px"></div>
-
-    <div class="field">
-      <label class="label" for="validationNotes">Notes</label>
-      <textarea class="textarea" id="validationNotes" placeholder="Ce que tu as appris, liens, retours, etc."></textarea>
-    </div>
-
-    <div class="row spread wrap">
-      <button class="btn btn-primary" id="saveValidationBtn" type="button">Sauvegarder</button>
-      <span class="help" id="validationMsg"></span>
-    </div>
-  </div>
-</div>
-
-
-                <!-- BRANDING -->
-                <div class="card stack hidden" id="branding" data-page="branding">
-  <div class="row spread wrap">
-    <div class="stack" style="gap: 4px">
-      <div class="kicker">Module 4</div>
-      <h2 class="h2">Branding</h2>
-    </div>
-    <span class="badge" id="brandingBadge">—</span>
-  </div>
-
-  <div class="card compact stack">
-    <div class="field">
-      <label class="label" for="brandName">Nom de la marque</label>
-      <input class="input" id="brandName" type="text" placeholder="ex : NOLIMIT AUTO" />
-    </div>
-
-    <div class="field">
-      <label class="label" for="brandPromise">Promesse (1 phrase)</label>
-      <input class="input" id="brandPromise" type="text" placeholder="ex : Aider les gens à … sans …" />
-    </div>
-
-    <div class="field">
-      <label class="label" for="brandPitch">Pitch (3 lignes)</label>
-      <textarea class="textarea" id="brandPitch" placeholder="Qui tu aides, comment, et pourquoi toi."></textarea>
-    </div>
-
-    <div class="row spread wrap">
-      <button class="btn btn-primary" id="saveBrandingBtn" type="button">Sauvegarder</button>
-      <span class="help" id="brandingMsg"></span>
-    </div>
-  </div>
-</div>
-
-
-                <!-- FINANCE -->
-                <div class="card stack hidden" id="finance" data-page="finance">
-  <div class="row spread wrap">
-    <div class="stack" style="gap: 4px">
-      <div class="kicker">Module 5</div>
-      <h2 class="h2">Finances</h2>
-    </div>
-    <span class="badge" id="financeBadge">—</span>
-  </div>
-
-  <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
-    <div class="card compact stack" style="grid-column: span 12">
-      <div class="h3">Calculateur</div>
-
-      <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 12px">
-        <div class="field" style="grid-column: span 4">
-          <label class="label" for="price">Prix de vente (€)</label>
-          <input class="input" id="price" type="number" min="0" value="99" />
-        </div>
-
-        <div class="field" style="grid-column: span 4">
-          <label class="label" for="cost">Coût (€)</label>
-          <input class="input" id="cost" type="number" min="0" value="20" />
-        </div>
-
-        <div class="field" style="grid-column: span 4">
-          <label class="label" for="monthlyTarget">Objectif mensuel (€)</label>
-          <input class="input" id="monthlyTarget" type="number" min="0" value="2000" />
-        </div>
-      </div>
-
-      <hr class="hr" />
-
-      <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 12px">
-        <div class="card compact stack" style="grid-column: span 6">
-          <div class="small muted">Marge / vente</div>
-          <div class="h3" id="marginValue">—</div>
-        </div>
-        <div class="card compact stack" style="grid-column: span 6">
-          <div class="small muted">Ventes nécessaires / mois</div>
-          <div class="h3" id="salesNeeded">—</div>
-        </div>
-      </div>
-
-      <div class="row spread wrap">
-        <button class="btn btn-primary" id="saveFinanceBtn" type="button">Sauvegarder</button>
-        <span class="help" id="financeMsg"></span>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-                <!-- ROADMAP -->
-                <div class="card stack hidden" id="roadmap" data-page="roadmap">
-  <div class="row spread wrap">
-    <div class="stack" style="gap: 4px">
-      <div class="kicker">Module 6</div>
-      <h2 class="h2">Roadmap</h2>
-    </div>
-    <span class="badge" id="roadmapBadge">0%</span>
-  </div>
-
-  <div class="card compact stack">
-    <div class="row wrap">
-      <input class="input" id="taskTitle" type="text" placeholder="Nouvelle tâche (ex : créer offre, trouver 10 prospects…)" />
-      <button class="btn btn-primary" id="addTaskBtn" type="button">Ajouter</button>
-    </div>
-
-    <div class="stack" id="tasksList" style="gap: 10px"></div>
-    <p class="help" id="tasksEmpty">Aucune tâche pour le moment.</p>
-  </div>
-</div>
-
-
-                <!-- SETTINGS -->
-                <div class="card stack hidden" id="settings" data-page="settings">
-                    <div class="row spread wrap">
-                        <div class="stack" style="gap: 4px">
-                            <div class="kicker" data-i18n="app.settings.kicker">Paramètres</div>
-                            <h2 class="h2" data-i18n="app.settings.title">Préférences</h2>
-                        </div>
-                        <span class="badge" data-i18n="app.settings.badge">Local</span>
-                    </div>
-
-                    <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
-                        <div class="card compact stack" style="grid-column: span 6">
-                            <div class="h3" data-i18n="app.settings.langTitle">Langue</div>
-                            <p class="p" data-i18n="app.settings.langDesc">FR/EN stocké en cookie.</p>
-                        </div>
-
-                        <div class="card compact stack" style="grid-column: span 6">
-                            <div class="h3" data-i18n="app.settings.themeTitle">Thème</div>
-                            <p class="p" data-i18n="app.settings.themeDesc">Light/Dark stocké en cookie.</p>
-                        </div>
-
-                        <div class="card compact stack" style="grid-column: span 12">
-                            <div class="h3" data-i18n="app.settings.dataTitle">Données</div>
-                            <p class="p" data-i18n="app.settings.dataDesc">
-                                V1 : cookies uniquement. (On améliorera la sécurité plus tard si tu ajoutes un backend.)
-                            </p>
-                        </div>
-                    </div>
+                <!-- Entrées MINIMALES pour que le calcul soit défendable -->
+                <div class="field" style="grid-column: span 4">
+                  <label class="label" for="pType">Type</label>
+                  <select class="select" id="pType">
+                    <option value="service">Service</option>
+                    <option value="digital">Produit digital</option>
+                    <option value="subscription">Abonnement</option>
+                    <option value="physical">Produit physique</option>
+                    <option value="audience">Audience / contenu</option>
+                  </select>
                 </div>
-            </section>
+
+                <div class="field" style="grid-column: span 4">
+                  <label class="label" for="pAudience">Audience</label>
+                  <select class="select" id="pAudience">
+                    <option value="b2c">B2C (particuliers)</option>
+                    <option value="b2b">B2B (entreprises)</option>
+                    <option value="both">Les deux</option>
+                  </select>
+                </div>
+
+                <div class="field" style="grid-column: span 4">
+                  <label class="label" for="pBudget">Budget de départ</label>
+                  <select class="select" id="pBudget">
+                    <option value="0-50">0–50€</option>
+                    <option value="50-200">50–200€</option>
+                    <option value="200-1000">200–1000€</option>
+                    <option value="1000+">1000€+</option>
+                  </select>
+                </div>
+
+                <div class="field" style="grid-column: span 6">
+                  <label class="label" for="pExp">Niveau</label>
+                  <select class="select" id="pExp">
+                    <option value="beginner">Débutant</option>
+                    <option value="intermediate">Intermédiaire</option>
+                    <option value="advanced">Avancé</option>
+                  </select>
+                </div>
+
+                <div class="field" style="grid-column: span 6">
+                  <label class="label" for="pGoalMonthly">Objectif mensuel (€) (optionnel)</label>
+                  <input class="input" id="pGoalMonthly" type="number" min="0" value="2000" />
+                </div>
+              </div>
+
+              <div class="row spread wrap">
+                <button class="btn btn-primary" id="generateBtn" type="button">Générer mon plan</button>
+                <span class="help" id="projectMsg"></span>
+              </div>
+            </div>
+
+            <!-- Résultats -->
+            <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
+              <div class="card compact stack" style="grid-column: span 6">
+                <div class="row spread wrap">
+                  <div class="h3">Scores</div>
+                  <span class="badge" id="scoreSummary">—</span>
+                </div>
+                <div class="row wrap" id="scoreBadges">
+                  <span class="badge">Rentabilité —</span>
+                  <span class="badge">Vitesse —</span>
+                  <span class="badge">Facilité —</span>
+                </div>
+                <p class="help" id="scoreWhy">Génère ton plan pour obtenir l’analyse.</p>
+              </div>
+
+              <div class="card compact stack" style="grid-column: span 6">
+                <div class="h3">Offre conseillée</div>
+                <div class="small muted" id="offerType">—</div>
+                <div class="h3" id="offerPrice">—</div>
+                <div class="small muted" id="offerSales">—</div>
+              </div>
+
+              <div class="card compact stack" style="grid-column: span 12">
+                <div class="row spread wrap">
+                  <div class="h3">Ton plan d’action</div>
+                  <a class="btn btn-sm btn-primary" href="#roadmap">Voir dans Roadmap</a>
+                </div>
+                <div class="stack" id="planPreview" style="gap: 10px"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- VALIDATION -->
+          <div class="card stack hidden" id="validation" data-page="validation">
+            <div class="row spread wrap">
+              <div class="stack" style="gap: 4px">
+                <div class="kicker">Module 3</div>
+                <h2 class="h2">Validation</h2>
+              </div>
+              <span class="badge" id="validationBadge">0%</span>
+            </div>
+
+            <div class="card compact stack">
+              <div class="stack" id="validationChecklist" style="gap: 10px"></div>
+
+              <div class="field">
+                <label class="label" for="validationNotes">Notes</label>
+                <textarea class="textarea" id="validationNotes" placeholder="Liens, retours, chiffres, notes…"></textarea>
+              </div>
+
+              <div class="row spread wrap">
+                <button class="btn btn-primary" id="saveValidationBtn" type="button">Sauvegarder</button>
+                <span class="help" id="validationMsg"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BRANDING -->
+          <div class="card stack hidden" id="branding" data-page="branding">
+            <div class="row spread wrap">
+              <div class="stack" style="gap: 4px">
+                <div class="kicker">Module 4</div>
+                <h2 class="h2">Branding</h2>
+              </div>
+              <span class="badge" id="brandingBadge">—</span>
+            </div>
+
+            <div class="card compact stack">
+              <div class="field">
+                <label class="label" for="brandName">Nom de la marque</label>
+                <input class="input" id="brandName" type="text" placeholder="ex : NOLIMIT AUTO" />
+              </div>
+
+              <div class="field">
+                <label class="label" for="brandPromise">Promesse (1 phrase)</label>
+                <input class="input" id="brandPromise" type="text" placeholder="ex : Aider X à obtenir Y sans Z." />
+              </div>
+
+              <div class="field">
+                <label class="label" for="brandPitch">Pitch (3 lignes)</label>
+                <textarea class="textarea" id="brandPitch" placeholder="Qui tu aides, comment, et pourquoi toi."></textarea>
+              </div>
+
+              <div class="row spread wrap">
+                <button class="btn btn-primary" id="saveBrandingBtn" type="button">Sauvegarder</button>
+                <span class="help" id="brandingMsg"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- FINANCE -->
+          <div class="card stack hidden" id="finance" data-page="finance">
+            <div class="row spread wrap">
+              <div class="stack" style="gap: 4px">
+                <div class="kicker">Module 5</div>
+                <h2 class="h2">Finances</h2>
+              </div>
+              <span class="badge" id="financeBadge">—</span>
+            </div>
+
+            <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
+              <div class="card compact stack" style="grid-column: span 12">
+                <div class="h3">Calculateur</div>
+
+                <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 12px">
+                  <div class="field" style="grid-column: span 4">
+                    <label class="label" for="price">Prix de vente (€)</label>
+                    <input class="input" id="price" type="number" min="0" value="99" />
+                  </div>
+
+                  <div class="field" style="grid-column: span 4">
+                    <label class="label" for="cost">Coût (€)</label>
+                    <input class="input" id="cost" type="number" min="0" value="20" />
+                  </div>
+
+                  <div class="field" style="grid-column: span 4">
+                    <label class="label" for="monthlyTarget">Objectif mensuel (€)</label>
+                    <input class="input" id="monthlyTarget" type="number" min="0" value="2000" />
+                  </div>
+                </div>
+
+                <hr class="hr" />
+
+                <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 12px">
+                  <div class="card compact stack" style="grid-column: span 6">
+                    <div class="small muted">Marge / vente</div>
+                    <div class="h3" id="marginValue">—</div>
+                  </div>
+                  <div class="card compact stack" style="grid-column: span 6">
+                    <div class="small muted">Ventes nécessaires / mois</div>
+                    <div class="h3" id="salesNeeded">—</div>
+                  </div>
+                </div>
+
+                <div class="row spread wrap">
+                  <button class="btn btn-primary" id="saveFinanceBtn" type="button">Sauvegarder</button>
+                  <span class="help" id="financeMsg"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROADMAP -->
+          <div class="card stack hidden" id="roadmap" data-page="roadmap">
+            <div class="row spread wrap">
+              <div class="stack" style="gap: 4px">
+                <div class="kicker">Module 6</div>
+                <h2 class="h2">Roadmap</h2>
+              </div>
+              <span class="badge" id="roadmapBadge">0%</span>
+            </div>
+
+            <div class="card compact stack">
+              <div class="row wrap">
+                <input class="input" id="taskTitle" type="text" placeholder="Nouvelle tâche (optionnel)" />
+                <button class="btn btn-primary" id="addTaskBtn" type="button">Ajouter</button>
+              </div>
+
+              <div class="stack" id="tasksList" style="gap: 10px"></div>
+              <p class="help" id="tasksEmpty">Aucune tâche pour le moment.</p>
+            </div>
+          </div>
+
+          <!-- SETTINGS -->
+          <div class="card stack hidden" id="settings" data-page="settings">
+            <div class="row spread wrap">
+              <div class="stack" style="gap: 4px">
+                <div class="kicker">Paramètres</div>
+                <h2 class="h2">Préférences</h2>
+              </div>
+              <span class="badge">Personnel</span>
+            </div>
+
+            <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
+              <div class="card compact stack" style="grid-column: span 6">
+                <div class="h3">Langue</div>
+                <p class="p">Choisis la langue de l’interface.</p>
+              </div>
+
+              <div class="card compact stack" style="grid-column: span 6">
+                <div class="h3">Thème</div>
+                <p class="p">Personnalise l’apparence de l’application.</p>
+              </div>
+
+              <div class="card compact stack" style="grid-column: span 12">
+                <div class="h3">Données</div>
+                <p class="p">Tes informations sont sauvegardées automatiquement.</p>
+              </div>
+            </div>
+          </div>
         </section>
+      </section>
     </main>
 
     <div class="toast" id="toast" role="status" aria-live="polite">
-        <div class="card"></div>
+      <div class="card"></div>
     </div>
+
     <script src="./js/cookies.js"></script>
     <script src="./js/i18n.js"></script>
     <script src="./js/app.js"></script>
-
-</body>
-
-
+  </body>
 </html>
