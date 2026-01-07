@@ -27,24 +27,35 @@
                 </a>
 
                 <nav class="nav-links" aria-label="Navigation principale">
-                    <a class="nav-link" href="#features" data-i18n="nav.features">Fonctionnalités</a>
-                    <a class="nav-link" href="#pricing" data-i18n="nav.pricing">Prix</a>
-                    <a class="nav-link" href="#faq" data-i18n="nav.faq">FAQ</a>
+  <a class="nav-link" href="#features" data-i18n="nav.features">Fonctionnalités</a>
+  <a class="nav-link" href="#pricing" data-i18n="nav.pricing">Prix</a>
+  <a class="nav-link" href="#faq" data-i18n="nav.faq">FAQ</a>
 
-                    <!-- Language switch (wired later in JS) -->
-                    <button class="btn btn-sm btn-ghost" id="langBtn" type="button" aria-label="Switch language">
-                        <span class="icon" aria-hidden="true">🌍</span>
-                        <span id="langLabel">FR</span>
-                    </button>
+  <button class="btn btn-sm btn-ghost" id="langBtn" type="button" aria-label="Switch language">
+    <span class="icon" aria-hidden="true">🌍</span>
+    <span id="langLabel">FR</span>
+  </button>
 
-                    <!-- Theme switch (wired later in JS) -->
-                    <button class="btn btn-sm btn-ghost" id="themeBtn" type="button" aria-label="Toggle theme">
-                        <span class="icon" aria-hidden="true">🌓</span>
-                        <span data-i18n="nav.theme">Thème</span>
-                    </button>
+  <button class="btn btn-sm btn-ghost" id="themeBtn" type="button" aria-label="Toggle theme">
+    <span class="icon" aria-hidden="true">🌓</span>
+    <span data-i18n="nav.theme">Thème</span>
+  </button>
 
-                    <a class="btn btn-sm btn-primary" href="#pricing" data-i18n="nav.start">Commencer</a>
-                </nav>
+  <a class="btn btn-sm btn-primary" href="#pricing" data-i18n="nav.start">Commencer</a>
+</nav>
+
+<!-- ✅ Bouton hamburger (mobile) -->
+<button
+  class="btn btn-sm btn-ghost nav-burger"
+  id="burgerBtn"
+  type="button"
+  aria-label="Menu"
+  aria-expanded="false"
+  aria-controls="mobileMenu"
+>
+  <span class="burger" aria-hidden="true"></span>
+</button>
+
             </div>
         </div>
     </header>
@@ -336,5 +347,6 @@
     <script src="./js/app.js"></script>
 
 </body>
+
 
 </html>
