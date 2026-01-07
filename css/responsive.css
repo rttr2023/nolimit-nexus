@@ -480,3 +480,15 @@ body {
     display: none !important;
   }
 }
+
+/* =========================
+   Fix mobile menu background
+   ========================= */
+@media (max-width: 640px) {
+  .mobile-menu-inner {
+    background: var(--bg2); /* fond plein */
+    border: 1px solid var(--stroke);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    border-radius: 18px;
+  }
+}
