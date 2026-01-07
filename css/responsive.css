@@ -492,3 +492,91 @@ body {
     border-radius: 18px;
   }
 }
+
+/* =========================
+   APP Responsive Fix (Mobile-first)
+   Add at bottom of responsive.css
+   ========================= */
+
+@media (max-width: 900px) {
+  /* App layout becomes 1 column earlier */
+  .app {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sidebar {
+    position: relative;
+    top: auto;
+    max-height: none;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Make any 12-col grids stack cleanly */
+  .grid[style*="repeat(12"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Catch inline grid-column spans (more robust) */
+  [style*="grid-column: span 6"],
+  [style*="grid-column:span 6"],
+  [style*="grid-column: span6"],
+  [style*="grid-column:span6"] {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Cards & content spacing */
+  .card {
+    padding: 14px;
+  }
+
+  .row.spread {
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  /* Inputs full width */
+  .row .btn,
+  .row .input,
+  .row .select {
+    width: 100%;
+  }
+
+  /* Sidebar becomes horizontal scroll (app-like) */
+  .sidebar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px;
+  }
+
+  .side-title {
+    display: none;
+  }
+
+  .sidebar .hr {
+    display: none;
+  }
+
+  .side-item {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--stroke);
+    background: var(--chip);
+  }
+
+  .sidebar .card.compact {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 12px;
+  }
+
+  /* Prevent any overflow */
+  .content {
+    min-width: 0;
+  }
+}
