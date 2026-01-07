@@ -292,3 +292,73 @@ body {
     padding: 9px 11px;
   }
 }
+
+/* =========================
+   Mobile hamburger menu (landing)
+   Add at bottom of responsive.css
+   ========================= */
+
+.nav-burger {
+  display: none;
+}
+
+/* Burger icon */
+.burger {
+  width: 20px;
+  height: 2px;
+  display: inline-block;
+  background: currentColor;
+  position: relative;
+  border-radius: 999px;
+}
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+}
+.burger::before {
+  top: -6px;
+}
+.burger::after {
+  top: 6px;
+}
+
+/* Mobile menu container */
+.mobile-menu {
+  position: fixed;
+  top: 68px; /* height of navbar area, ok with your current style */
+  left: 0;
+  right: 0;
+  z-index: 60;
+  padding: 12px 0 0;
+}
+
+.mobile-menu-inner {
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+/* Mobile behavior */
+@media (max-width: 640px) {
+  /* Hide normal links on mobile */
+  .nav-links {
+    display: none;
+  }
+
+  /* Show burger */
+  .nav-burger {
+    display: inline-flex;
+  }
+
+  /* Make menu links look nice */
+  .mobile-menu .side-item {
+    border-radius: 14px;
+    padding: 12px 12px;
+  }
+}
