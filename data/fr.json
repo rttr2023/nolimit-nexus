@@ -1,0 +1,187 @@
+{
+  "nav": {
+    "features": "Fonctionnalités",
+    "pricing": "Prix",
+    "faq": "FAQ",
+    "theme": "Thème",
+    "start": "Commencer"
+  },
+  "hero": {
+    "chip": "NOLIMIT-NEXUS · Copilote Business",
+    "title": "De 0 à un business rentable — et un outil que tu gardes dans la durée.",
+    "subtitle": "Idée → validation → branding → offre → finances → roadmap → suivi. Tout dans une seule application.",
+    "ctaPrimary": "S’abonner",
+    "ctaSecondary": "Découvrir les fonctionnalités",
+    "badge1": "Accès immédiat",
+    "badge2": "FR + EN",
+    "badge3": "100% en ligne",
+    "cardTitle": "Ce que tu obtiens",
+    "cardBadge": "Tout-en-un",
+    "item1Title": "Roadmap guidée",
+    "item1Desc": "Étapes claires et progression visible.",
+    "item2Title": "Validation & persona",
+    "item2Desc": "Marché, client cible, problèmes et solutions.",
+    "item3Title": "Finances",
+    "item3Desc": "Prix, marges, objectifs et rentabilité.",
+    "item4Title": "Suivi long terme",
+    "item4Desc": "Pilotage, indicateurs clés et optimisation.",
+    "progressLabel": "Progression type",
+    "progressValue": "38% complété",
+    "progressBadge": "Exemple",
+    "noteTitle": "Accès premium",
+    "noteDesc": "Une fois abonné, tu accèdes immédiatement à l’application complète.",
+    "noteBadge1": "Abonnement mensuel",
+    "noteBadge2": "Annulable à tout moment"
+  },
+  "features": {
+    "kicker": "Modules",
+    "title": "Tout ce qu’il faut, du départ à la croissance",
+    "subtitle": "Chaque module reste utile même quand ton business est déjà lancé.",
+    "f1Title": "1) Onboarding & plan",
+    "tagCore": "Essentiel",
+    "f1Desc": "Questions ciblées pour créer une roadmap personnalisée.",
+    "f2Title": "2) Idées & scoring",
+    "tagFast": "Rapide",
+    "f2Desc": "Génération et classement d’idées selon leur potentiel.",
+    "f3Title": "3) Validation marché",
+    "tagSmart": "Stratégique",
+    "f3Desc": "Analyse client, problème, solution et positionnement.",
+    "f4Title": "4) Finances",
+    "tagMoney": "€",
+    "f4Desc": "Calculs clairs pour prendre de bonnes décisions.",
+    "f5Title": "5) Roadmap & suivi",
+    "tagLifetime": "Durable",
+    "f5Desc": "Suivi continu, ajustements et évolution du business."
+  },
+  "pricing": {
+    "kicker": "Tarif",
+    "title": "Un abonnement simple et transparent",
+    "subtitle": "Accès complet à l’application et à toutes les fonctionnalités.",
+    "planTitle": "Premium",
+    "planBadge": "Recommandé",
+    "perMonth": "/ mois",
+    "b1": "Accès à tous les modules",
+    "b2": "Roadmap personnalisée",
+    "b3": "Outils financiers intégrés",
+    "b4": "Suivi et optimisation continue",
+    "cta": "Payer avec Stripe",
+    "help": "Paiement sécurisé. Accès immédiat après validation.",
+    "howTitle": "Comment ça fonctionne ?",
+    "howDesc": "Tu t’abonnes, tu accèdes à l’application et tu avances étape par étape.",
+    "altTitle": "Déjà abonné ?",
+    "altDesc": "Tu peux accéder directement à l’application.",
+    "openApp": "Accéder à l’application"
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "q1": "Puis-je annuler à tout moment ?",
+    "a1": "Oui, l’abonnement est mensuel et sans engagement.",
+    "q2": "Mes données sont-elles conservées ?",
+    "a2": "Oui, elles sont sauvegardées automatiquement pour assurer la continuité de ton travail.",
+    "q3": "L’application fonctionne-t-elle sur mobile ?",
+    "a3": "Oui, elle est entièrement responsive et utilisable sur tous les écrans."
+  },
+  "footer": {
+    "tag": "NOLIMIT-NEXUS — copilote business premium",
+    "features": "Fonctionnalités",
+    "pricing": "Prix",
+    "app": "Application"
+  },
+  "app": {
+    "reset": "Réinitialiser les données",
+    "sidebarTitle": "Modules",
+    "nav": {
+      "dashboard": "Dashboard",
+      "onboarding": "Onboarding",
+      "ideas": "Idées",
+      "validation": "Validation",
+      "branding": "Branding",
+      "finance": "Finances",
+      "roadmap": "Roadmap",
+      "settings": "Paramètres"
+    },
+    "planLabel": "Offre",
+    "planName": "Premium",
+    "planStatus": "Actif",
+    "planHelp": "Accès premium en cours.",
+
+    "dashboard": {
+      "kicker": "Dashboard",
+      "title": "Ta progression",
+      "progressLabel": "Progression globale",
+      "badge": "Automatique",
+      "nextTitle": "Prochaine action",
+      "nextDesc": "Complète l’onboarding pour générer ton plan.",
+      "nextCta": "Commencer l’onboarding",
+      "quickTitle": "Accès rapide",
+      "quickIdeas": "Idées",
+      "quickFinance": "Finances",
+      "quickRoadmap": "Roadmap",
+      "quickHelp": "Tes avancées sont sauvegardées automatiquement."
+    },
+
+    "onboarding": {
+      "kicker": "Module 1",
+      "title": "Onboarding",
+      "goalLabel": "Objectif principal",
+      "choose": "Choisir…",
+      "goal1": "Revenu complémentaire",
+      "goal2": "Vivre de mon business",
+      "goal3": "Développer et scaler",
+      "goalHelp": "Cela permet d’adapter la stratégie.",
+      "timeLabel": "Temps disponible par semaine",
+      "timeHelp": "Pour ajuster la charge de travail.",
+      "skillsLabel": "Tes compétences",
+      "skillsPlaceholder": "ex : montage vidéo, mécanique, développement, vente…",
+      "skillsHelp": "Elles serviront à générer des idées pertinentes.",
+      "save": "Sauvegarder"
+    },
+
+    "ideas": {
+      "kicker": "Module 2",
+      "title": "Générateur d’idées",
+      "badge": "Inclus",
+      "desc": "Création et analyse d’idées adaptées à ton profil."
+    },
+
+    "validation": {
+      "kicker": "Module 3",
+      "title": "Validation",
+      "badge": "Inclus",
+      "desc": "Structuration et validation de ton concept."
+    },
+
+    "branding": {
+      "kicker": "Module 4",
+      "title": "Branding",
+      "badge": "Inclus",
+      "desc": "Nom, positionnement et message de marque."
+    },
+
+    "finance": {
+      "kicker": "Module 5",
+      "title": "Finances",
+      "badge": "Inclus",
+      "desc": "Pilotage financier et objectifs clairs."
+    },
+
+    "roadmap": {
+      "kicker": "Module 6",
+      "title": "Roadmap",
+      "badge": "Inclus",
+      "desc": "Plan d’action structuré et évolutif."
+    },
+
+    "settings": {
+      "kicker": "Paramètres",
+      "title": "Préférences",
+      "badge": "Personnel",
+      "langTitle": "Langue",
+      "langDesc": "Choisis la langue de l’interface.",
+      "themeTitle": "Thème",
+      "themeDesc": "Personnalise l’apparence de l’application.",
+      "dataTitle": "Données",
+      "dataDesc": "Tes informations sont sauvegardées automatiquement."
+    }
+  }
+}

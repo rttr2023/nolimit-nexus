@@ -1,0 +1,139 @@
+/* =========================
+   responsive.css
+   Breakpoints + Mobile tweaks
+   ========================= */
+
+/* Mobile-first: base styles already in main.css */
+
+/* ---------- Small phones (<= 360px) ---------- */
+@media (max-width: 360px) {
+  :root {
+    --gutter: 16px;
+  }
+
+  .btn {
+    padding: 10px 12px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
+
+/* ---------- Phones / small tablets (<= 640px) ---------- */
+@media (max-width: 640px) {
+  .section {
+    padding: 34px 0;
+  }
+
+  .nav-inner {
+    padding: 12px 0;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-link {
+    padding: 9px 10px;
+    border-radius: 12px;
+  }
+
+  .hero {
+    padding: 34px 0;
+  }
+
+  .hero-card {
+    padding: 18px;
+  }
+
+  /* App layout becomes single column */
+  .app {
+    grid-template-columns: 1fr;
+    padding: 12px 0 22px;
+  }
+
+  .sidebar {
+    position: relative;
+    top: auto;
+    max-height: none;
+  }
+
+  .content {
+    gap: 12px;
+  }
+
+  /* Buttons full width where needed */
+  .cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-row .btn {
+    width: 100%;
+  }
+
+  /* Table becomes scrollable */
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+  }
+
+  .table {
+    min-width: 640px;
+  }
+}
+
+/* ---------- Tablets (<= 900px) ---------- */
+@media (max-width: 900px) {
+  :root {
+    --container: 980px;
+  }
+
+  /* Slightly tighter spacing */
+  .card {
+    padding: 16px;
+  }
+
+  .app {
+    grid-template-columns: 240px 1fr;
+    gap: 14px;
+  }
+
+  .sidebar {
+    padding: 12px;
+  }
+
+  .side-item {
+    padding: 9px 10px;
+  }
+}
+
+/* ---------- Small laptops (<= 1100px) ---------- */
+@media (max-width: 1100px) {
+  :root {
+    --container: 980px;
+  }
+}
+
+/* ---------- Large screens (>= 1300px) ---------- */
+@media (min-width: 1300px) {
+  :root {
+    --container: 1180px;
+  }
+
+  .app {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+/* ---------- Super wide (>= 1600px) ---------- */
+@media (min-width: 1600px) {
+  :root {
+    --container: 1240px;
+  }
+
+  .hero {
+    padding: 54px 0;
+  }
+}

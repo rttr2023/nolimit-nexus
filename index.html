@@ -1,0 +1,340 @@
+<!-- =========================
+     index.html (Landing)
+     ========================= -->
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0d12" />
+    <title>NOLIMIT-NEXUS — Copilote Business (FR/EN)</title>
+    <meta name="description"
+        content="Une application premium qui accompagne la création et la croissance d’un business : idée, validation, branding, finances, roadmap, suivi." />
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+</head>
+
+<body>
+    <!-- NAV -->
+    <header class="navbar">
+        <div class="container">
+            <div class="nav-inner">
+                <a class="brand" href="./index.html">
+                    <span class="brand-badge" aria-hidden="true"></span>
+                    <span>NOLIMIT-NEXUS</span>
+                </a>
+
+                <nav class="nav-links" aria-label="Navigation principale">
+                    <a class="nav-link" href="#features" data-i18n="nav.features">Fonctionnalités</a>
+                    <a class="nav-link" href="#pricing" data-i18n="nav.pricing">Prix</a>
+                    <a class="nav-link" href="#faq" data-i18n="nav.faq">FAQ</a>
+
+                    <!-- Language switch (wired later in JS) -->
+                    <button class="btn btn-sm btn-ghost" id="langBtn" type="button" aria-label="Switch language">
+                        <span class="icon" aria-hidden="true">🌍</span>
+                        <span id="langLabel">FR</span>
+                    </button>
+
+                    <!-- Theme switch (wired later in JS) -->
+                    <button class="btn btn-sm btn-ghost" id="themeBtn" type="button" aria-label="Toggle theme">
+                        <span class="icon" aria-hidden="true">🌓</span>
+                        <span data-i18n="nav.theme">Thème</span>
+                    </button>
+
+                    <a class="btn btn-sm btn-primary" href="#pricing" data-i18n="nav.start">Commencer</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="card hero-card stack">
+                        <div class="chip" style="width: fit-content">
+                            <span aria-hidden="true">✨</span>
+                            <span data-i18n="hero.chip">Copilote Business Premium</span>
+                        </div>
+
+                        <h1 class="h1" data-i18n="hero.title">
+                            De 0 à un business rentable — et un outil que tu gardes même après.
+                        </h1>
+
+                        <p class="p" data-i18n="hero.subtitle">
+                            Idée → validation → branding → offre → finances → roadmap → suivi. Tout dans une seule app.
+                        </p>
+
+                        <div class="cta-row">
+                            <a class="btn btn-lg btn-primary" href="#pricing" data-i18n="hero.ctaPrimary">S’abonner</a>
+                            <a class="btn btn-lg" href="#features" data-i18n="hero.ctaSecondary">Voir ce que ça
+                                contient</a>
+                        </div>
+
+                        <div class="row wrap muted small">
+                            <span class="badge ok" data-i18n="hero.badge1">Accès immédiat</span>
+                            <span class="badge" data-i18n="hero.badge2">FR + EN</span>
+                            <span class="badge" data-i18n="hero.badge3">100% Web</span>
+                        </div>
+                    </div>
+
+                    <div class="grid">
+                        <div class="card stack">
+                            <div class="row spread">
+                                <h2 class="h2" data-i18n="hero.cardTitle">Ce que tu obtiens</h2>
+                                <span class="badge" data-i18n="hero.cardBadge">Tout-en-un</span>
+                            </div>
+
+                            <div class="grid">
+                                <div class="row">
+                                    <span class="badge ok" aria-hidden="true">✓</span>
+                                    <div>
+                                        <div class="h3" data-i18n="hero.item1Title">Roadmap guidée</div>
+                                        <div class="small muted" data-i18n="hero.item1Desc">Étapes claires +
+                                            progression.</div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <span class="badge ok" aria-hidden="true">✓</span>
+                                    <div>
+                                        <div class="h3" data-i18n="hero.item2Title">Validation & persona</div>
+                                        <div class="small muted" data-i18n="hero.item2Desc">Marché, client, problèmes,
+                                            solution.</div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <span class="badge ok" aria-hidden="true">✓</span>
+                                    <div>
+                                        <div class="h3" data-i18n="hero.item3Title">Finances</div>
+                                        <div class="small muted" data-i18n="hero.item3Desc">Prix, marge, objectifs,
+                                            seuil de rentabilité.</div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <span class="badge ok" aria-hidden="true">✓</span>
+                                    <div>
+                                        <div class="h3" data-i18n="hero.item4Title">Suivi long terme</div>
+                                        <div class="small muted" data-i18n="hero.item4Desc">KPIs simples et
+                                            optimisation.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="hr" />
+
+                            <div class="row spread">
+                                <div class="stack" style="gap: 2px">
+                                    <div class="small muted" data-i18n="hero.progressLabel">Progression exemple</div>
+                                    <div class="h3" data-i18n="hero.progressValue">38% complété</div>
+                                </div>
+                                <span class="badge" data-i18n="hero.progressBadge">Démo</span>
+                            </div>
+                            <div class="progress" aria-label="progress">
+                                <span style="width: 38%"></span>
+                            </div>
+                        </div>
+
+                        <div class="card stack">
+                            <div class="h3" data-i18n="hero.noteTitle">Important</div>
+                            <p class="p" data-i18n="hero.noteDesc">
+                                L’app est 100% payante : après paiement, tu accèdes à l’espace app.
+                            </p>
+                            <div class="row wrap">
+                                <span class="badge" data-i18n="hero.noteBadge1">Abonnement mensuel</span>
+                                <span class="badge" data-i18n="hero.noteBadge2">Annulable</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="section" id="features">
+            <div class="container stack">
+                <div class="stack" style="gap: 6px">
+                    <div class="kicker" data-i18n="features.kicker">Modules</div>
+                    <h2 class="h2" data-i18n="features.title">Tout ce qu’il faut, du départ à la croissance</h2>
+                    <p class="p" data-i18n="features.subtitle">
+                        Chaque module est pensé pour être utile même quand ton business tourne déjà.
+                    </p>
+                </div>
+
+                <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
+                    <div class="card stack" style="grid-column: span 6">
+                        <div class="row spread">
+                            <div class="h3" data-i18n="features.f1Title">1) Onboarding & plan</div>
+                            <span class="badge" data-i18n="features.tagCore">Core</span>
+                        </div>
+                        <p class="p" data-i18n="features.f1Desc">
+                            Questionnaire rapide → roadmap personnalisée → objectifs.
+                        </p>
+                    </div>
+
+                    <div class="card stack" style="grid-column: span 6">
+                        <div class="row spread">
+                            <div class="h3" data-i18n="features.f2Title">2) Idées & scoring</div>
+                            <span class="badge" data-i18n="features.tagFast">Rapide</span>
+                        </div>
+                        <p class="p" data-i18n="features.f2Desc">
+                            Génère et classe des idées selon rentabilité, vitesse et difficulté.
+                        </p>
+                    </div>
+
+                    <div class="card stack" style="grid-column: span 6">
+                        <div class="row spread">
+                            <div class="h3" data-i18n="features.f3Title">3) Validation marché</div>
+                            <span class="badge" data-i18n="features.tagSmart">Smart</span>
+                        </div>
+                        <p class="p" data-i18n="features.f3Desc">
+                            Persona, problème/solution, positionnement, checklist de validation.
+                        </p>
+                    </div>
+
+                    <div class="card stack" style="grid-column: span 6">
+                        <div class="row spread">
+                            <div class="h3" data-i18n="features.f4Title">4) Finances</div>
+                            <span class="badge" data-i18n="features.tagMoney">€</span>
+                        </div>
+                        <p class="p" data-i18n="features.f4Desc">
+                            Calculateur de prix, marge, seuil de rentabilité et objectifs mensuels.
+                        </p>
+                    </div>
+
+                    <div class="card stack" style="grid-column: span 12">
+                        <div class="row spread">
+                            <div class="h3" data-i18n="features.f5Title">5) Roadmap + suivi long terme</div>
+                            <span class="badge" data-i18n="features.tagLifetime">À vie</span>
+                        </div>
+                        <p class="p" data-i18n="features.f5Desc">
+                            To-do list, progression, KPIs, optimisation et gestion des prochaines offres.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section class="section" id="pricing">
+            <div class="container stack">
+                <div class="stack" style="gap: 6px">
+                    <div class="kicker" data-i18n="pricing.kicker">Tarif</div>
+                    <h2 class="h2" data-i18n="pricing.title">Un abonnement simple</h2>
+                    <p class="p" data-i18n="pricing.subtitle">Accès complet à tous les modules + mises à jour.</p>
+                </div>
+
+                <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
+                    <div class="card stack" style="grid-column: span 6">
+                        <div class="row spread">
+                            <div class="h3" data-i18n="pricing.planTitle">Premium</div>
+                            <span class="badge ok" data-i18n="pricing.planBadge">Recommandé</span>
+                        </div>
+
+                        <div class="row" style="align-items: baseline; gap: 10px">
+                            <div class="h1" style="font-size: 2.2rem">19,90€</div>
+                            <div class="muted" data-i18n="pricing.perMonth">/ mois</div>
+                        </div>
+
+                        <div class="stack">
+                            <div class="row"><span class="badge ok">✓</span><span data-i18n="pricing.b1">Tous les
+                                    modules</span></div>
+                            <div class="row"><span class="badge ok">✓</span><span data-i18n="pricing.b2">Roadmap +
+                                    progression</span></div>
+                            <div class="row"><span class="badge ok">✓</span><span data-i18n="pricing.b3">Outils finances
+                                    & objectifs</span></div>
+                            <div class="row"><span class="badge ok">✓</span><span data-i18n="pricing.b4">Suivi long
+                                    terme</span></div>
+                        </div>
+
+                        <button class="btn btn-primary btn-lg" id="subscribeBtn" type="button" data-i18n="pricing.cta">
+                            Paiement sécurisé avec Stripe
+                        </button>
+
+                        <p class="help" data-i18n="pricing.help">
+                            Après paiement, tu es redirigé vers l’app.
+                        </p>
+                    </div>
+
+                    <div class="card stack" style="grid-column: span 6">
+                        <div class="h3" data-i18n="pricing.howTitle">Comment ça marche ?</div>
+                        <p class="p" data-i18n="pricing.howDesc">
+                            Paiement sécurisé → accès immédiat à l’application.
+                        </p>
+
+                        <hr class="hr" />
+
+                        <div class="h3" data-i18n="pricing.altTitle">Déjà abonné ?</div>
+                        <p class="p" data-i18n="pricing.altDesc">Si tu as déjà le cookie d’accès, tu peux ouvrir l’app.
+                        </p>
+                        <a class="btn" href="./app.html" data-i18n="pricing.openApp">Ouvrir l’app</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container stack">
+                <div class="stack" style="gap: 6px">
+                    <div class="kicker">FAQ</div>
+                    <h2 class="h2" data-i18n="faq.title">Questions fréquentes</h2>
+                </div>
+
+                <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
+                    <div class="card stack" style="grid-column: span 6">
+                        <div class="h3" data-i18n="faq.q1">Je peux annuler ?</div>
+                        <p class="p" data-i18n="faq.a1">Oui. L’abonnement est mensuel et annulable.</p>
+                    </div>
+
+                    <div class="card stack" style="grid-column: span 6">
+                        <div class="h3" data-i18n="faq.q2">Mes données sont où ?</div>
+                        <p class="p" data-i18n="faq.a2">Tes données sont sauvegardées automatiquement pour une utilisation fluide.</p>
+                    </div>
+
+                    <div class="card stack" style="grid-column: span 12">
+                        <div class="h3" data-i18n="faq.q3">Ça marche sur mobile ?</div>
+                        <p class="p" data-i18n="faq.a3">Oui, le site est full responsive et mobile-first.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="section">
+            <div class="container">
+                <div class="card row spread wrap">
+                    <div class="row">
+                        <span class="brand-badge" aria-hidden="true" style="width: 28px; height: 28px"></span>
+                        <div class="stack" style="gap: 2px">
+                            <strong>NOLIMIT-NEXUS</strong>
+                            <span class="small muted" data-i18n="footer.tag">Copilote business premium</span>
+                        </div>
+                    </div>
+
+                    <div class="row wrap">
+                        <a class="nav-link" href="#features" data-i18n="footer.features">Fonctionnalités</a>
+                        <a class="nav-link" href="#pricing" data-i18n="footer.pricing">Prix</a>
+                        <a class="nav-link" href="./app.html" data-i18n="footer.app">App</a>
+                    </div>
+                </div>
+                <div class="small muted" style="text-align: center; padding: 16px 0">
+                    © <span id="year"></span> NOLIMIT-NEXUS
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="./js/cookies.js"></script>
+    <script src="./js/i18n.js"></script>
+    <script src="./js/stripe.js"></script>
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>

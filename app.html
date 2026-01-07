@@ -1,0 +1,323 @@
+<!-- =========================
+     app.html (Application)
+     Protected by cookie later
+     ========================= -->
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0d12" />
+    <title>NOLIMIT-NEXUS — App</title>
+    <meta name="description" content="Application premium pour créer et gérer un business de A à Z." />
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+</head>
+
+<body>
+    <!-- NAV -->
+    <header class="navbar">
+        <div class="container">
+            <div class="nav-inner">
+                <a class="brand" href="./index.html">
+                    <span class="brand-badge" aria-hidden="true"></span>
+                    <span>NOLIMIT-NEXUS</span>
+                </a>
+
+                <nav class="nav-links" aria-label="Navigation app">
+                    <button class="btn btn-sm btn-ghost" id="langBtn" type="button">
+                        <span class="icon" aria-hidden="true">🌍</span>
+                        <span id="langLabel">FR</span>
+                    </button>
+
+                    <button class="btn btn-sm btn-ghost" id="themeBtn" type="button">
+                        <span class="icon" aria-hidden="true">🌓</span>
+                        <span data-i18n="nav.theme">Thème</span>
+                    </button>
+
+                    <button class="btn btn-sm btn-danger" id="resetBtn" type="button" data-i18n="app.reset">
+                        Réinitialiser les données
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- App shell -->
+        <section class="app">
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="side-title" data-i18n="app.sidebarTitle">Modules</div>
+
+                <a class="side-item active" href="#dashboard" data-route="dashboard">
+                    <span class="icon" aria-hidden="true">📊</span>
+                    <span data-i18n="app.nav.dashboard">Dashboard</span>
+                </a>
+
+                <a class="side-item" href="#onboarding" data-route="onboarding">
+                    <span class="icon" aria-hidden="true">🧭</span>
+                    <span data-i18n="app.nav.onboarding">Onboarding</span>
+                </a>
+
+                <a class="side-item" href="#ideas" data-route="ideas">
+                    <span class="icon" aria-hidden="true">💡</span>
+                    <span data-i18n="app.nav.ideas">Idées</span>
+                </a>
+
+                <a class="side-item" href="#validation" data-route="validation">
+                    <span class="icon" aria-hidden="true">🧪</span>
+                    <span data-i18n="app.nav.validation">Validation</span>
+                </a>
+
+                <a class="side-item" href="#branding" data-route="branding">
+                    <span class="icon" aria-hidden="true">🎯</span>
+                    <span data-i18n="app.nav.branding">Branding</span>
+                </a>
+
+                <a class="side-item" href="#finance" data-route="finance">
+                    <span class="icon" aria-hidden="true">💶</span>
+                    <span data-i18n="app.nav.finance">Finances</span>
+                </a>
+
+                <a class="side-item" href="#roadmap" data-route="roadmap">
+                    <span class="icon" aria-hidden="true">✅</span>
+                    <span data-i18n="app.nav.roadmap">Roadmap</span>
+                </a>
+
+                <hr class="hr" style="margin: 12px 0" />
+
+                <a class="side-item" href="#settings" data-route="settings">
+                    <span class="icon" aria-hidden="true">⚙️</span>
+                    <span data-i18n="app.nav.settings">Paramètres</span>
+                </a>
+
+                <div class="card compact stack" style="margin-top: 12px">
+                    <div class="small muted" data-i18n="app.planLabel">Plan</div>
+                    <div class="row spread">
+                        <strong data-i18n="app.planName">Premium</strong>
+                        <span class="badge ok" data-i18n="app.planStatus">Actif</span>
+                    </div>
+                    <p class="help">Accès premium actif.</p>
+                </div>
+            </aside>
+
+            <!-- CONTENT -->
+            <section class="content">
+                <!-- DASHBOARD -->
+                <div class="card stack" id="dashboard" data-page="dashboard">
+                    <div class="row spread wrap">
+                        <div class="stack" style="gap: 4px">
+                            <div class="kicker" data-i18n="app.dashboard.kicker">Dashboard</div>
+                            <h1 class="h2" data-i18n="app.dashboard.title">Ta progression</h1>
+                        </div>
+                        <span class="badge" id="today"></span>
+                    </div>
+
+                    <div class="row spread wrap">
+                        <div class="stack" style="gap: 4px">
+                            <div class="small muted" data-i18n="app.dashboard.progressLabel">Progression globale</div>
+                            <div class="h3"><span id="progressText">0%</span></div>
+                        </div>
+                        <span class="badge" data-i18n="app.dashboard.badge">Auto</span>
+                    </div>
+
+                    <div class="progress" aria-label="progress">
+                        <span id="progressBar" style="width: 0%"></span>
+                    </div>
+
+                    <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
+                        <div class="card compact stack" style="grid-column: span 6">
+                            <div class="h3" data-i18n="app.dashboard.nextTitle">Prochaine action</div>
+                            <p class="p" id="nextAction" data-i18n="app.dashboard.nextDesc">
+                                Commence par l’onboarding pour générer ton plan.
+                            </p>
+                            <a class="btn btn-primary" href="#onboarding" data-i18n="app.dashboard.nextCta">Aller à
+                                l’onboarding</a>
+                        </div>
+
+                        <div class="card compact stack" style="grid-column: span 6">
+                            <div class="h3" data-i18n="app.dashboard.quickTitle">Raccourcis</div>
+                            <div class="row wrap">
+                                <a class="btn btn-sm" href="#ideas" data-i18n="app.dashboard.quickIdeas">Idées</a>
+                                <a class="btn btn-sm" href="#finance"
+                                    data-i18n="app.dashboard.quickFinance">Finances</a>
+                                <a class="btn btn-sm" href="#roadmap" data-i18n="app.dashboard.quickRoadmap">Roadmap</a>
+                            </div>
+                            <p class="help" data-i18n="app.dashboard.quickHelp">Tout se sauvegarde en cookies (V1).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ONBOARDING -->
+                <div class="card stack hidden" id="onboarding" data-page="onboarding">
+                    <div class="row spread wrap">
+                        <div class="stack" style="gap: 4px">
+                            <div class="kicker" data-i18n="app.onboarding.kicker">Module 1</div>
+                            <h2 class="h2" data-i18n="app.onboarding.title">Onboarding</h2>
+                        </div>
+                        <span class="badge" id="onboardingStatus">0/3</span>
+                    </div>
+
+                    <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
+                        <div class="card compact stack" style="grid-column: span 6">
+                            <div class="field">
+                                <label class="label" for="goal" data-i18n="app.onboarding.goalLabel">Objectif
+                                    principal</label>
+                                <select class="select" id="goal">
+                                    <option value="" selected data-i18n="app.onboarding.choose">Choisir…</option>
+                                    <option value="side" data-i18n="app.onboarding.goal1">Revenu complémentaire</option>
+                                    <option value="full" data-i18n="app.onboarding.goal2">Vivre du business</option>
+                                    <option value="scale" data-i18n="app.onboarding.goal3">Scaler / augmenter profits
+                                    </option>
+                                </select>
+                                <div class="help" data-i18n="app.onboarding.goalHelp">Ça aide à générer une roadmap
+                                    adaptée.</div>
+                            </div>
+                        </div>
+
+                        <div class="card compact stack" style="grid-column: span 6">
+                            <div class="field">
+                                <label class="label" for="time" data-i18n="app.onboarding.timeLabel">Temps dispo /
+                                    semaine</label>
+                                <select class="select" id="time">
+                                    <option value="" selected data-i18n="app.onboarding.choose">Choisir…</option>
+                                    <option value="2-5">2–5h</option>
+                                    <option value="5-10">5–10h</option>
+                                    <option value="10-20">10–20h</option>
+                                    <option value="20+">20h+</option>
+                                </select>
+                                <div class="help" data-i18n="app.onboarding.timeHelp">On calibrera la charge de travail.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card compact stack" style="grid-column: span 12">
+                            <div class="field">
+                                <input class="input" id="skills" type="text"
+                                    data-i18n-placeholder="app.onboarding.skillsPlaceholder" />
+
+                                <input class="input" id="skills" type="text"
+                                    placeholder="ex: montage vidéo, mécanique, dev, vente..." />
+                                <div class="help" data-i18n="app.onboarding.skillsHelp">On s’en servira pour générer des
+                                    idées.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row spread wrap">
+                        <button class="btn btn-primary" id="saveOnboarding" type="button"
+                            data-i18n="app.onboarding.save">
+                            Sauvegarder
+                        </button>
+                        <span class="help" id="onboardingSavedMsg" aria-live="polite"></span>
+                    </div>
+                </div>
+
+                <!-- IDEAS -->
+                <div class="card stack hidden" id="ideas" data-page="ideas">
+                    <div class="row spread wrap">
+                        <div class="stack" style="gap: 4px">
+                            <div class="kicker" data-i18n="app.ideas.kicker">Module 2</div>
+                            <h2 class="h2" data-i18n="app.ideas.title">Générateur d’idées</h2>
+                        </div>
+                        <span class="badge" data-i18n="app.ideas.badge">Bientôt</span>
+                    </div>
+                    <p class="p" data-i18n="app.ideas.desc">
+                        Ici on mettra : génération + scoring + sauvegarde en cookies.
+                    </p>
+                </div>
+
+                <!-- VALIDATION -->
+                <div class="card stack hidden" id="validation" data-page="validation">
+                    <div class="row spread wrap">
+                        <div class="stack" style="gap: 4px">
+                            <div class="kicker" data-i18n="app.validation.kicker">Module 3</div>
+                            <h2 class="h2" data-i18n="app.validation.title">Validation</h2>
+                        </div>
+                        <span class="badge" data-i18n="app.validation.badge">Bientôt</span>
+                    </div>
+                    <p class="p" data-i18n="app.validation.desc">Persona, problème/solution, checklist.</p>
+                </div>
+
+                <!-- BRANDING -->
+                <div class="card stack hidden" id="branding" data-page="branding">
+                    <div class="row spread wrap">
+                        <div class="stack" style="gap: 4px">
+                            <div class="kicker" data-i18n="app.branding.kicker">Module 4</div>
+                            <h2 class="h2" data-i18n="app.branding.title">Branding</h2>
+                        </div>
+                        <span class="badge" data-i18n="app.branding.badge">Bientôt</span>
+                    </div>
+                    <p class="p" data-i18n="app.branding.desc">Nom, promesse de valeur, pitch, ton de marque.</p>
+                </div>
+
+                <!-- FINANCE -->
+                <div class="card stack hidden" id="finance" data-page="finance">
+                    <div class="row spread wrap">
+                        <div class="stack" style="gap: 4px">
+                            <div class="kicker" data-i18n="app.finance.kicker">Module 5</div>
+                            <h2 class="h2" data-i18n="app.finance.title">Finances</h2>
+                        </div>
+                        <span class="badge" data-i18n="app.finance.badge">Bientôt</span>
+                    </div>
+                    <p class="p" data-i18n="app.finance.desc">Prix, marge, seuil de rentabilité, objectifs.</p>
+                </div>
+
+                <!-- ROADMAP -->
+                <div class="card stack hidden" id="roadmap" data-page="roadmap">
+                    <div class="row spread wrap">
+                        <div class="stack" style="gap: 4px">
+                            <div class="kicker" data-i18n="app.roadmap.kicker">Module 6</div>
+                            <h2 class="h2" data-i18n="app.roadmap.title">Roadmap</h2>
+                        </div>
+                        <span class="badge" data-i18n="app.roadmap.badge">Bientôt</span>
+                    </div>
+                    <p class="p" data-i18n="app.roadmap.desc">To-do list, progression, étapes.</p>
+                </div>
+
+                <!-- SETTINGS -->
+                <div class="card stack hidden" id="settings" data-page="settings">
+                    <div class="row spread wrap">
+                        <div class="stack" style="gap: 4px">
+                            <div class="kicker" data-i18n="app.settings.kicker">Paramètres</div>
+                            <h2 class="h2" data-i18n="app.settings.title">Préférences</h2>
+                        </div>
+                        <span class="badge" data-i18n="app.settings.badge">Local</span>
+                    </div>
+
+                    <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
+                        <div class="card compact stack" style="grid-column: span 6">
+                            <div class="h3" data-i18n="app.settings.langTitle">Langue</div>
+                            <p class="p" data-i18n="app.settings.langDesc">FR/EN stocké en cookie.</p>
+                        </div>
+
+                        <div class="card compact stack" style="grid-column: span 6">
+                            <div class="h3" data-i18n="app.settings.themeTitle">Thème</div>
+                            <p class="p" data-i18n="app.settings.themeDesc">Light/Dark stocké en cookie.</p>
+                        </div>
+
+                        <div class="card compact stack" style="grid-column: span 12">
+                            <div class="h3" data-i18n="app.settings.dataTitle">Données</div>
+                            <p class="p" data-i18n="app.settings.dataDesc">
+                                V1 : cookies uniquement. (On améliorera la sécurité plus tard si tu ajoutes un backend.)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <div class="card"></div>
+    </div>
+    <script src="./js/cookies.js"></script>
+    <script src="./js/i18n.js"></script>
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>
