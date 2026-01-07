@@ -236,3 +236,72 @@
     init().catch((e) => console.error(e));
   });
 })();
+
+// =========================
+// Landing mobile menu
+// =========================
+(function () {
+  const burgerBtn = document.getElementById("burgerBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (!burgerBtn || !mobileMenu) return; // not on landing
+
+  function openMenu() {
+    mobileMenu.hidden = false;
+    burgerBtn.setAttribute("aria-expanded", "true");
+  }
+
+  function closeMenu() {
+    mobileMenu.hidden = true;
+    burgerBtn.setAttribute("aria-expanded", "false");
+  }
+
+  function toggleMenu() {
+    const isOpen = burgerBtn.getAttribute("aria-expanded") === "true";
+    isOpen ? closeMenu() : openMenu();
+  }
+
+  burgerBtn.addEventListener("click", toggleMenu);
+
+  // Close when clicking a link
+  mobileMenu.addEventListener("click", (e) => {
+    const link = e.target.closest("[data-mobile-link]");
+    if (link) closeMenu();
+  });
+
+  // Close on ESC
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  // Close if resizing to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 640) closeMenu();
+  });
+
+  // Mirror lang/theme buttons
+  const langBtnMobile = document.getElementById("langBtnMobile");
+  const themeBtnMobile = document.getElementById("themeBtnMobile");
+  const langLabelMobile = document.getElementById("langLabelMobile");
+
+  // keep labels in sync
+  function syncLangLabel() {
+    const main = document.getElementById("langLabel");
+    if (main && langLabelMobile) langLabelMobile.textContent = main.textContent;
+  }
+  syncLangLabel();
+
+  if (langBtnMobile) {
+    langBtnMobile.addEventListener("click", async () => {
+      if (window.I18N?.toggleLang) await window.I18N.toggleLang();
+      syncLangLabel();
+    });
+  }
+
+  if (themeBtnMobile) {
+    themeBtnMobile.addEventListener("click", () => {
+      const themeBtn = document.getElementById("themeBtn");
+      if (themeBtn) themeBtn.click(); // reuse existing logic
+    });
+  }
+})();
