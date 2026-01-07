@@ -218,65 +218,206 @@
 
                 <!-- IDEAS -->
                 <div class="card stack hidden" id="ideas" data-page="ideas">
-                    <div class="row spread wrap">
-                        <div class="stack" style="gap: 4px">
-                            <div class="kicker" data-i18n="app.ideas.kicker">Module 2</div>
-                            <h2 class="h2" data-i18n="app.ideas.title">Générateur d’idées</h2>
-                        </div>
-                        <span class="badge" data-i18n="app.ideas.badge">Bientôt</span>
-                    </div>
-                    <p class="p" data-i18n="app.ideas.desc">
-                        Ici on mettra : génération + scoring + sauvegarde en cookies.
-                    </p>
-                </div>
+  <div class="row spread wrap">
+    <div class="stack" style="gap: 4px">
+      <div class="kicker">Module 2</div>
+      <h2 class="h2">Idées</h2>
+    </div>
+    <span class="badge" id="ideasCount">0</span>
+  </div>
+
+  <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
+    <div class="card compact stack" style="grid-column: span 12">
+      <div class="h3">Ajouter une idée</div>
+
+      <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 12px">
+        <div class="field" style="grid-column: span 12">
+          <label class="label" for="ideaTitle">Titre</label>
+          <input class="input" id="ideaTitle" type="text" placeholder="ex : coaching fitness, site de services auto…" />
+        </div>
+
+        <div class="field" style="grid-column: span 12">
+          <label class="label" for="ideaDesc">Description</label>
+          <textarea class="textarea" id="ideaDesc" placeholder="Explique l’idée en 2–3 lignes"></textarea>
+        </div>
+
+        <div class="field" style="grid-column: span 4">
+          <label class="label" for="ideaProfit">Rentabilité (1–10)</label>
+          <input class="input" id="ideaProfit" type="number" min="1" max="10" value="7" />
+        </div>
+
+        <div class="field" style="grid-column: span 4">
+          <label class="label" for="ideaSpeed">Vitesse (1–10)</label>
+          <input class="input" id="ideaSpeed" type="number" min="1" max="10" value="6" />
+        </div>
+
+        <div class="field" style="grid-column: span 4">
+          <label class="label" for="ideaEase">Facilité (1–10)</label>
+          <input class="input" id="ideaEase" type="number" min="1" max="10" value="5" />
+        </div>
+      </div>
+
+      <div class="row spread wrap">
+        <button class="btn btn-primary" id="addIdeaBtn" type="button">Ajouter</button>
+        <span class="help" id="ideaMsg"></span>
+      </div>
+    </div>
+
+    <div class="card compact stack" style="grid-column: span 12">
+      <div class="row spread wrap">
+        <div class="h3">Mes idées</div>
+        <button class="btn btn-sm" id="sortIdeasBtn" type="button">Trier par score</button>
+      </div>
+
+      <div class="stack" id="ideasList" style="gap: 10px"></div>
+      <p class="help" id="ideasEmpty">Aucune idée pour le moment.</p>
+    </div>
+  </div>
+</div>
+
 
                 <!-- VALIDATION -->
                 <div class="card stack hidden" id="validation" data-page="validation">
-                    <div class="row spread wrap">
-                        <div class="stack" style="gap: 4px">
-                            <div class="kicker" data-i18n="app.validation.kicker">Module 3</div>
-                            <h2 class="h2" data-i18n="app.validation.title">Validation</h2>
-                        </div>
-                        <span class="badge" data-i18n="app.validation.badge">Bientôt</span>
-                    </div>
-                    <p class="p" data-i18n="app.validation.desc">Persona, problème/solution, checklist.</p>
-                </div>
+  <div class="row spread wrap">
+    <div class="stack" style="gap: 4px">
+      <div class="kicker">Module 3</div>
+      <h2 class="h2">Validation</h2>
+    </div>
+    <span class="badge" id="validationBadge">0%</span>
+  </div>
+
+  <div class="card compact stack">
+    <div class="field">
+      <label class="label" for="validationIdeaSelect">Choisir une idée</label>
+      <select class="select" id="validationIdeaSelect"></select>
+      <div class="help">Tu valides une idée à la fois.</div>
+    </div>
+
+    <hr class="hr" />
+
+    <div class="stack" id="validationChecklist" style="gap: 10px"></div>
+
+    <div class="field">
+      <label class="label" for="validationNotes">Notes</label>
+      <textarea class="textarea" id="validationNotes" placeholder="Ce que tu as appris, liens, retours, etc."></textarea>
+    </div>
+
+    <div class="row spread wrap">
+      <button class="btn btn-primary" id="saveValidationBtn" type="button">Sauvegarder</button>
+      <span class="help" id="validationMsg"></span>
+    </div>
+  </div>
+</div>
+
 
                 <!-- BRANDING -->
                 <div class="card stack hidden" id="branding" data-page="branding">
-                    <div class="row spread wrap">
-                        <div class="stack" style="gap: 4px">
-                            <div class="kicker" data-i18n="app.branding.kicker">Module 4</div>
-                            <h2 class="h2" data-i18n="app.branding.title">Branding</h2>
-                        </div>
-                        <span class="badge" data-i18n="app.branding.badge">Bientôt</span>
-                    </div>
-                    <p class="p" data-i18n="app.branding.desc">Nom, promesse de valeur, pitch, ton de marque.</p>
-                </div>
+  <div class="row spread wrap">
+    <div class="stack" style="gap: 4px">
+      <div class="kicker">Module 4</div>
+      <h2 class="h2">Branding</h2>
+    </div>
+    <span class="badge" id="brandingBadge">—</span>
+  </div>
+
+  <div class="card compact stack">
+    <div class="field">
+      <label class="label" for="brandName">Nom de la marque</label>
+      <input class="input" id="brandName" type="text" placeholder="ex : NOLIMIT AUTO" />
+    </div>
+
+    <div class="field">
+      <label class="label" for="brandPromise">Promesse (1 phrase)</label>
+      <input class="input" id="brandPromise" type="text" placeholder="ex : Aider les gens à … sans …" />
+    </div>
+
+    <div class="field">
+      <label class="label" for="brandPitch">Pitch (3 lignes)</label>
+      <textarea class="textarea" id="brandPitch" placeholder="Qui tu aides, comment, et pourquoi toi."></textarea>
+    </div>
+
+    <div class="row spread wrap">
+      <button class="btn btn-primary" id="saveBrandingBtn" type="button">Sauvegarder</button>
+      <span class="help" id="brandingMsg"></span>
+    </div>
+  </div>
+</div>
+
 
                 <!-- FINANCE -->
                 <div class="card stack hidden" id="finance" data-page="finance">
-                    <div class="row spread wrap">
-                        <div class="stack" style="gap: 4px">
-                            <div class="kicker" data-i18n="app.finance.kicker">Module 5</div>
-                            <h2 class="h2" data-i18n="app.finance.title">Finances</h2>
-                        </div>
-                        <span class="badge" data-i18n="app.finance.badge">Bientôt</span>
-                    </div>
-                    <p class="p" data-i18n="app.finance.desc">Prix, marge, seuil de rentabilité, objectifs.</p>
-                </div>
+  <div class="row spread wrap">
+    <div class="stack" style="gap: 4px">
+      <div class="kicker">Module 5</div>
+      <h2 class="h2">Finances</h2>
+    </div>
+    <span class="badge" id="financeBadge">—</span>
+  </div>
+
+  <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 16px">
+    <div class="card compact stack" style="grid-column: span 12">
+      <div class="h3">Calculateur</div>
+
+      <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 12px">
+        <div class="field" style="grid-column: span 4">
+          <label class="label" for="price">Prix de vente (€)</label>
+          <input class="input" id="price" type="number" min="0" value="99" />
+        </div>
+
+        <div class="field" style="grid-column: span 4">
+          <label class="label" for="cost">Coût (€)</label>
+          <input class="input" id="cost" type="number" min="0" value="20" />
+        </div>
+
+        <div class="field" style="grid-column: span 4">
+          <label class="label" for="monthlyTarget">Objectif mensuel (€)</label>
+          <input class="input" id="monthlyTarget" type="number" min="0" value="2000" />
+        </div>
+      </div>
+
+      <hr class="hr" />
+
+      <div class="grid" style="grid-template-columns: repeat(12, 1fr); gap: 12px">
+        <div class="card compact stack" style="grid-column: span 6">
+          <div class="small muted">Marge / vente</div>
+          <div class="h3" id="marginValue">—</div>
+        </div>
+        <div class="card compact stack" style="grid-column: span 6">
+          <div class="small muted">Ventes nécessaires / mois</div>
+          <div class="h3" id="salesNeeded">—</div>
+        </div>
+      </div>
+
+      <div class="row spread wrap">
+        <button class="btn btn-primary" id="saveFinanceBtn" type="button">Sauvegarder</button>
+        <span class="help" id="financeMsg"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
 
                 <!-- ROADMAP -->
                 <div class="card stack hidden" id="roadmap" data-page="roadmap">
-                    <div class="row spread wrap">
-                        <div class="stack" style="gap: 4px">
-                            <div class="kicker" data-i18n="app.roadmap.kicker">Module 6</div>
-                            <h2 class="h2" data-i18n="app.roadmap.title">Roadmap</h2>
-                        </div>
-                        <span class="badge" data-i18n="app.roadmap.badge">Bientôt</span>
-                    </div>
-                    <p class="p" data-i18n="app.roadmap.desc">To-do list, progression, étapes.</p>
-                </div>
+  <div class="row spread wrap">
+    <div class="stack" style="gap: 4px">
+      <div class="kicker">Module 6</div>
+      <h2 class="h2">Roadmap</h2>
+    </div>
+    <span class="badge" id="roadmapBadge">0%</span>
+  </div>
+
+  <div class="card compact stack">
+    <div class="row wrap">
+      <input class="input" id="taskTitle" type="text" placeholder="Nouvelle tâche (ex : créer offre, trouver 10 prospects…)" />
+      <button class="btn btn-primary" id="addTaskBtn" type="button">Ajouter</button>
+    </div>
+
+    <div class="stack" id="tasksList" style="gap: 10px"></div>
+    <p class="help" id="tasksEmpty">Aucune tâche pour le moment.</p>
+  </div>
+</div>
+
 
                 <!-- SETTINGS -->
                 <div class="card stack hidden" id="settings" data-page="settings">
@@ -319,5 +460,6 @@
     <script src="./js/app.js"></script>
 
 </body>
+
 
 </html>
