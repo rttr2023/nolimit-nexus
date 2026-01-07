@@ -137,3 +137,158 @@
     padding: 54px 0;
   }
 }
+
+/* =========================
+   Mobile polish patch
+   Ajoute ceci en bas de responsive.css
+   ========================= */
+
+/* Prevent horizontal scroll due to long content */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* ---------- Phones / small tablets (<= 640px) ---------- */
+@media (max-width: 640px) {
+  /* Better touch spacing */
+  :root {
+    --gutter: 16px;
+  }
+
+  .btn,
+  .input,
+  .select,
+  .textarea {
+    min-height: 44px; /* thumb-friendly */
+  }
+
+  .btn-lg {
+    min-height: 50px;
+  }
+
+  /* Navbar: wrap cleanly, avoid overflow */
+  .nav-inner {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Make primary CTA take full width when it exists in nav (optional) */
+  .nav-links .btn-primary {
+    width: 100%;
+  }
+
+  /* HERO: tighten */
+  .hero-card {
+    padding: 16px;
+  }
+
+  /* ----- IMPORTANT: force 12-col grid cards to stack ----- */
+  /* Because your HTML uses inline styles like: style="grid-column: span 6" */
+  [style*="grid-column: span 6"] {
+    grid-column: span 12 !important;
+  }
+
+  /* Keep 12-span as is */
+  [style*="grid-column: span 12"] {
+    grid-column: span 12 !important;
+  }
+
+  /* If you have grids with 12 columns inline, ensure they behave */
+  [style*="grid-template-columns: repeat(12"] {
+    grid-template-columns: repeat(12, 1fr) !important;
+  }
+
+  /* Pricing cards / feature cards spacing */
+  .card {
+    border-radius: 18px;
+  }
+
+  /* Tables wrap helper */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ---------- APP: turn sidebar into horizontal scroll menu ---------- */
+  .app {
+    gap: 12px;
+  }
+
+  .sidebar {
+    position: relative;
+    top: auto;
+    max-height: none;
+
+    /* horizontal nav */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px;
+  }
+
+  /* Hide "Modules" title on mobile to save space */
+  .side-title {
+    display: none;
+  }
+
+  /* Make items chip-like and horizontal */
+  .side-item {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--stroke);
+    background: var(--chip);
+  }
+
+  .side-item.active {
+    border-color: rgba(109, 94, 252, 0.45);
+  }
+
+  /* Compact plan card in sidebar becomes a normal card below (optional) */
+  .sidebar .card.compact {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 12px;
+    border-radius: 16px;
+  }
+
+  /* Content spacing */
+  .content {
+    gap: 12px;
+  }
+
+  /* Toast: ensure it's not too wide */
+  .toast .card {
+    width: min(520px, calc(100vw - 24px));
+  }
+}
+
+/* ---------- Very small phones (<= 360px) ---------- */
+@media (max-width: 360px) {
+  .nav-links .nav-link {
+    padding: 8px 10px;
+  }
+
+  .h1 {
+    font-size: 1.8rem;
+  }
+
+  .sidebar {
+    padding: 8px;
+  }
+
+  .side-item {
+    padding: 9px 11px;
+  }
+}
