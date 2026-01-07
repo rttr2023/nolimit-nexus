@@ -362,3 +362,121 @@ body {
     padding: 12px 12px;
   }
 }
+
+/* =========================
+   Mobile hamburger animation + overlay
+   Add at bottom of responsive.css
+   ========================= */
+
+.nav-burger {
+  display: none;
+}
+
+/* Burger icon base */
+.burger {
+  width: 20px;
+  height: 2px;
+  display: inline-block;
+  background: currentColor;
+  position: relative;
+  border-radius: 999px;
+  transition: background var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+  transition: transform var(--dur) var(--ease), top var(--dur) var(--ease), opacity var(--dur) var(--ease);
+}
+
+.burger::before {
+  top: -6px;
+}
+
+.burger::after {
+  top: 6px;
+}
+
+/* When open: turn into X */
+.nav-burger.is-open .burger {
+  background: transparent; /* hide middle line */
+}
+
+.nav-burger.is-open .burger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-burger.is-open .burger::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* Overlay */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+}
+
+.mobile-overlay.show {
+  opacity: 1;
+}
+
+/* Mobile menu container */
+.mobile-menu {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  padding: 12px 0 0;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
+}
+
+.mobile-menu.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-menu-inner {
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+/* Mobile behavior */
+@media (max-width: 640px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-burger {
+    display: inline-flex;
+  }
+
+  .mobile-menu .side-item {
+    border-radius: 14px;
+    padding: 12px 12px;
+  }
+}
+
+/* On desktop: keep overlay/menu hidden even if accidentally toggled */
+@media (min-width: 641px) {
+  .mobile-overlay,
+  .mobile-menu {
+    display: none !important;
+  }
+}
